@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to feh-builder-gui!');
+    expect(page.getTitleText()).toEqual('feh-builder app is running!');
   });
 
   afterEach(async () => {
