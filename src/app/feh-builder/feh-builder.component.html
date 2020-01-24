@@ -1,0 +1,81 @@
+<div style="display: flex; max-width: 950px;  padding-left: 25%;padding-top: 20px;">
+    <div id="unit-container" style=" display: flex; justify-content: space-between; flex-direction: column;">
+        <div id="unit-selector-container" style="display: flex; flex-direction: column;">
+            <label>Unit:</label>
+            <ng-select
+                class="stat-component"
+                style="width: 350px;"
+                [items]="units"
+                bindLabel="key"
+                bindValue="key"
+                [(ngModel)]="selectedUnit"
+                (change)="changedSelectedUnit($event)"
+            >
+            </ng-select>
+        </div>
+        <div id="unit-stats-mods" style="display: flex;padding-top: 30px;">
+            <div>
+                <label>Merges</label>
+                <ng-select
+                    class="stat-component"
+                    [items]="merges"
+                    [(ngModel)]="selectedMerge"
+                    [clearable]="false"
+                    (change)="changedMerge($event)"
+                >
+                </ng-select>
+            </div>
+            <div>
+                <label>Asset</label>
+                <ng-select
+                    class="stat-component"
+                    [items]="assetFlaw"
+                    (change)="changedAsset($event)"
+                    [clearable]="false"
+                    bindLabel="value"
+                    bindValue="key"
+                    [(ngModel)]="selectedAsset"
+                >
+                </ng-select>
+            </div>
+            <div>
+                <label>Flaw</label>
+                <ng-select
+                    class="stat-component"
+                    [items]="assetFlaw"
+                    (change)="changedFlaw($event)"
+                    [clearable]="false"
+                    bindLabel="value"
+                    bindValue="key"
+                    [(ngModel)]="selectedFlaw"
+                >
+                </ng-select>
+            </div>
+            <div>
+                <label>Dragon Flowers</label>
+                <ng-select
+                    class="stat-component"
+                    [items]="flowers"
+                    (change)="changedFlower($event)"
+                    [clearable]="false"
+                    [(ngModel)]="selectedFlower"
+                >
+                </ng-select>
+            </div>
+            <div>
+                <label>Summoner Support</label>
+                <ng-select
+                    class="stat-component"
+                    [items]="supports"
+                    (change)="changedSupport($event)"
+                    [clearable]="false"
+                    bindLabel="value"
+                    bindValue="key"
+                    [(ngModel)]="selectedSupport"
+                >
+                </ng-select>
+            </div>
+        </div>
+        <stats-panel #statsPanel></stats-panel>
+    </div>
+</div>

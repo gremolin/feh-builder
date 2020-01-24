@@ -1,2 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@ng-select/ng-select/themes/default.theme.css";
+@import '~@ng-select/ng-select/themes/default.theme.css';
+
+.stat-component.ng-select.ng-select-single .ng-select-container {
+    height: 40px;
+}
+
+.stat-component {
+    min-width: 150px;
+    padding: 0px 10px 0px 0px;
+}
+
+stats-panel {
+    padding-top: 100px;
+}

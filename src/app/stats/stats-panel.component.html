@@ -1,0 +1,8 @@
+<div style="display: flex; flex-direction: column;">
+    <stat-component statLabel="HP" [statValue]="hp"></stat-component>
+    <stat-component statLabel="Att" [statValue]="att"></stat-component>
+    <stat-component statLabel="Spd" [statValue]="spd"></stat-component>
+    <stat-component statLabel="Def" [statValue]="def"></stat-component>
+    <stat-component statLabel="Res" [statValue]="res"></stat-component>
+    <stat-component statLabel="Total" [statValue]="hp + att + spd + def + res"></stat-component>
+</div>
