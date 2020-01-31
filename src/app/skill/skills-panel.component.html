@@ -1,0 +1,13 @@
+<label style="padding-left: 55px">Skill</label>
+<label style="padding-left: 220px">Effect</label>
+<label style="padding-left: 250px">Inherited From</label>
+<div style="display: flex; flex-direction: column;">
+    <skill-component
+        [skills]="wpns"
+        skillLabel="WP"
+        [skillValue]="wp"
+        [skillDesc]="wpDesc"
+        [skillInheritance]="wpInheritance"
+        (skillChange)="handleWeaponChange($event)"
+    ></skill-component>
+</div>

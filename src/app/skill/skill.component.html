@@ -1,0 +1,26 @@
+<div class="stat-component">
+    <label class="stat-name-label">{{ skillLabel }}</label>
+    <ng-select
+        class="stat-component"
+        style="width: 250px;"
+        [items]="skills"
+        bindLabel="name"
+        bindValue="name"
+        [(ngModel)]="skillValue"
+        (change)="changedSelectedSkill($event)"
+    >
+    </ng-select>
+    <ng-select
+        *ngIf="skillLevel"
+        class="stat-component refine"
+        style="width: 50px;"
+        [items]="skillLevels"
+        bindLabel="key"
+        bindValue="key"
+        [(ngModel)]="skillLevel"
+        (change)="changedSelectedSkillLevel($event)"
+    >
+    </ng-select>
+    <label class="stat-desc-label">{{ skillDesc }}</label>
+    <label class="stat-desc-label">{{ skillInheritance }}</label>
+</div>

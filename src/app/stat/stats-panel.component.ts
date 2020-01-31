@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { MergedStat, UnitStats } from './../data/data.types';
+import { MergedStat, UnitStats } from '../data/data.types';
 
 @Component({
     selector: 'stats-panel',
@@ -84,15 +84,15 @@ export class StatsPanelComponent {
         ];
 
         this.growthStats = [
-            this.selectedUnit.hp,
-            this.selectedUnit.att,
-            this.selectedUnit.spd,
-            this.selectedUnit.def,
-            this.selectedUnit.res
+            this.selectedUnit.growthHp,
+            this.selectedUnit.growthAtt,
+            this.selectedUnit.growthSpd,
+            this.selectedUnit.growthDef,
+            this.selectedUnit.growthRes
         ];
     }
     calculateAssetFlaw() {
-        console.log('b4 asset/flaw', this.growthStats, this.asset, this.flaw, this.mergeLevel);
+        //console.log('b4 asset/flaw', this.growthStats, this.asset, this.flaw, this.mergeLevel);
         if (this.asset > -1) {
             this.growthStats[this.asset] += 5;
         }
@@ -109,16 +109,16 @@ export class StatsPanelComponent {
             this.baseStats[this.asset]--;
         }
 
-        console.log('af asset/flaw', this.growthStats, this.asset, this.flaw);
+        //console.log('af asset/flaw', this.growthStats, this.asset, this.flaw);
     }
 
     calculateLevelStats() {
         const rarityMod = 0.79 + 0.07 * this.hardcodedRarity;
         const levelMod = (this.hardcodedLevel - 1) / 100;
-        console.log('this.hardcodedRarity', this.hardcodedRarity);
-        console.log('this.hardcodedRarity', 0.07 * this.hardcodedRarity);
-        console.log('rarityMod', rarityMod);
-        console.log('levelMod', levelMod);
+        //console.log('this.hardcodedRarity', this.hardcodedRarity);
+        //console.log('this.hardcodedRarity', 0.07 * this.hardcodedRarity);
+        //console.log('rarityMod', rarityMod);
+        //console.log('levelMod', levelMod);
 
         this.hp = this.baseStats[0] + Math.trunc(levelMod * Math.trunc(this.growthStats[0] * rarityMod));
         this.att = this.baseStats[1] + Math.trunc(levelMod * Math.trunc(this.growthStats[1] * rarityMod));
@@ -134,11 +134,11 @@ export class StatsPanelComponent {
         const fourthStat = this.findHighestStat(3);
         const fifthStat = this.findHighestStat(4);
 
-        console.log('highestStat', highestStat);
-        console.log('secondStat', secondStat);
-        console.log('thirdStat', thirdStat);
-        console.log('fourthStat', fourthStat);
-        console.log('fifthStat', fifthStat);
+        //console.log('highestStat', highestStat);
+        //console.log('secondStat', secondStat);
+        //console.log('thirdStat', thirdStat);
+        //console.log('fourthStat', fourthStat);
+        //console.log('fifthStat', fifthStat);
 
         if (this.mergeLevel >= 1) {
             highestStat();
@@ -209,10 +209,10 @@ export class StatsPanelComponent {
             foundStats: 0
         };
 
-        console.log('this.baseStats', this.baseStats);
-        console.log('stats', stats);
-        console.log('statToFind', statToFind);
-        console.log('mergeStat', mergeStat);
+        //console.log('this.baseStats', this.baseStats);
+        //console.log('stats', stats);
+        //console.log('statToFind', statToFind);
+        //console.log('mergeStat', mergeStat);
 
         // TODO use the const stats array?
         if (this.baseStats[0] === statToFind && this.resolveTies(mergeStat)) {
@@ -252,7 +252,7 @@ export class StatsPanelComponent {
         const thirdStat = this.findHighestStat(2);
         const fourthStat = this.findHighestStat(3);
         const fifthStat = this.findHighestStat(4);
-        console.log('this.flower', this.flower);
+        //console.log('this.flower', this.flower);
 
         if (this.flower >= 1) {
             highestStat();
@@ -287,7 +287,7 @@ export class StatsPanelComponent {
     }
 
     calculateSummonerSupport() {
-        console.log('this.support', this.support);
+        //console.log('this.support', this.support);
         if (this.support >= 1) {
             this.addToHp();
             this.addToHp();
@@ -313,26 +313,26 @@ export class StatsPanelComponent {
 
     addToHp() {
         this.hp++;
-        console.log('this.hp', this.hp);
+        //console.log('this.hp', this.hp);
     }
 
     addToAtt() {
         this.att++;
-        console.log('this.att', this.att);
+        //console.log('this.att', this.att);
     }
 
     addToSpd() {
         this.spd++;
-        console.log('this.spd', this.spd);
+        //console.log('this.spd', this.spd);
     }
 
     addToDef() {
         this.def++;
-        console.log('this.def', this.def);
+        //console.log('this.def', this.def);
     }
 
     addToRes() {
         this.res++;
-        console.log('this.res', this.res);
+        //console.log('this.res', this.res);
     }
 }

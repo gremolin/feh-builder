@@ -1,13 +1,16 @@
-<div style="display: flex; max-width: 950px;  padding-left: 25%;padding-top: 20px;">
-    <div id="unit-container" style=" display: flex; justify-content: space-between; flex-direction: column;">
+<div style="display: flex; flex-direction: column; ">
+    <div
+        id="unit-container"
+        style=" display: flex; justify-content: space-between; flex-direction: column;max-width: 950px; padding-left: 25%; padding-top: 20px;"
+    >
         <div id="unit-selector-container" style="display: flex; flex-direction: column;">
             <label>Unit:</label>
             <ng-select
                 class="stat-component"
                 style="width: 350px;"
                 [items]="units"
-                bindLabel="key"
-                bindValue="key"
+                bindLabel="name"
+                bindValue="name"
                 [(ngModel)]="selectedUnit"
                 (change)="changedSelectedUnit($event)"
             >
@@ -76,6 +79,9 @@
                 </ng-select>
             </div>
         </div>
+    </div>
+    <div id="stats-moves-panel" style="display: flex; padding-left: 10%; padding-top: 50px">
         <stats-panel #statsPanel></stats-panel>
+        <skills-panel #skillsPanel style="padding-left: 50px;"></skills-panel>
     </div>
 </div>
