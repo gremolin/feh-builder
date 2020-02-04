@@ -1,5 +1,6 @@
 import { UnitStats } from './data.types';
 
+//month is -1
 export const unitStats: UnitStats[] = [
     {
         key: 'Abel: The Panther',
@@ -14,5 +15,19 @@ export const unitStats: UnitStats[] = [
         growthSpd: 55,
         growthDef: 40,
         growthRes: 45
+    },
+    {
+        key: 'Alfonse: Askran Duo',
+        released: new Date(2020, 0, 1),
+        baseHp: 17,
+        baseAtt: 6,
+        baseSpd: 5,
+        baseDef: 3,
+        baseRes: 6,
+        growthHp: 50,
+        growthAtt: 70,
+        growthSpd: 25,
+        growthDef: 70,
+        growthRes: 50
     }
 ];

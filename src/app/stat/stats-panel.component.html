@@ -1,5 +1,9 @@
 <div style="display: flex; flex-direction: column;">
-    <stat-component statLabel="HP" [statValue]="hp"></stat-component>
+    <stat-component
+        statLabel="HP"
+        [statValue]="hp"
+        [highlight]="asset === 0 && flaw !== 0 ? 1 : flaw === 0 && asset !== 0 && !(mergeLevel > 0) ? -1 : 0"
+    ></stat-component>
     <stat-component statLabel="Att" [statValue]="att"></stat-component>
     <stat-component statLabel="Spd" [statValue]="spd"></stat-component>
     <stat-component statLabel="Def" [statValue]="def"></stat-component>

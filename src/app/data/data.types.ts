@@ -26,32 +26,52 @@ export interface MergedStat {
 }
 
 export interface UnitStat {
-    //keys: 0 = hp, 1= att
+    //keys: 0 = hp, 1 = att
     key: number;
     value: number;
 }
 
 export interface UnitSkillInheritance {
     key: string;
+    subKey?: string;
     level: number;
 }
 
 export interface UnitSkills {
     key: string;
+    wpType: string;
     wps: UnitSkillInheritance[];
-    restriction?: string[];
+    assists?: UnitSkillInheritance[];
+    specials?: UnitSkillInheritance[];
+    aSkills?: UnitSkillInheritance[];
+    bSkills?: UnitSkillInheritance[];
+    cSkills?: UnitSkillInheritance[];
 }
 
-export interface Skill {
-    name: string;
+export interface SkillLevel {
+    key?: number;
+    value: string;
     description: string;
     sp: number;
     statIncreases?: UnitStat[];
 }
 
+export interface Skill {
+    name: string;
+    description: string;
+    sp?: number;
+    skillLevels?: SkillLevel[];
+    restrictions?: string[];
+}
+
 export interface Weapon extends Skill {
     mt: number;
     refinable?: boolean;
-    personalRefineDescription?: string;
-    personalRefineStatIncrease?: UnitStat[];
+}
+
+export interface SkillDisplay {
+    name?: string;
+    description?: string;
+    inheritance?: string;
+    sp?: number;
 }

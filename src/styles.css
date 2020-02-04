@@ -1,15 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@ng-select/ng-select/themes/default.theme.css';
 
-.stat-component.ng-select.ng-select-single .ng-select-container {
-    height: 40px;
-}
-
-.stat-component {
-    min-width: 150px;
-    padding: 0px 10px 0px 0px;
-    display: flex;
-    align-items: center;
+span {
+    font-size: small;
 }
 
 label {
@@ -19,6 +12,22 @@ label {
     padding-top: 7px;
 }
 
+.stat-component.ng-select.ng-select-single .ng-select-container {
+    height: 20px;
+}
+
+.stat-component {
+    min-width: 150px;
+    padding: 0px 10px 0px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.stat-component .refine .ng-select-container {
+    height: 20px;
+    width: 80px;
+}
+
 .stat-name-label {
     font-weight: bold;
     text-align: left;
@@ -26,10 +35,10 @@ label {
 
 .stat-value-label {
     text-align: right;
+    padding-right: 10px;
 }
 
 .stat-desc-label {
-    min-width: 300px;
     font-size: small;
     white-space: pre-wrap;
 }

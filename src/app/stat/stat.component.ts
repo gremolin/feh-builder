@@ -8,4 +8,6 @@ import { Component, Input } from '@angular/core';
 export class StatComponent {
     @Input() statLabel: string;
     @Input() statValue: number;
+
+    @Input() highlight = 0;
 }

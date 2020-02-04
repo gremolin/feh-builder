@@ -1,26 +1,30 @@
 <div class="stat-component">
     <label class="stat-name-label">{{ skillLabel }}</label>
-    <ng-select
-        class="stat-component"
-        style="width: 250px;"
-        [items]="skills"
-        bindLabel="name"
-        bindValue="name"
-        [(ngModel)]="skillValue"
-        (change)="changedSelectedSkill($event)"
-    >
-    </ng-select>
-    <ng-select
-        *ngIf="skillLevel"
-        class="stat-component refine"
-        style="width: 50px;"
-        [items]="skillLevels"
-        bindLabel="key"
-        bindValue="key"
-        [(ngModel)]="skillLevel"
-        (change)="changedSelectedSkillLevel($event)"
-    >
-    </ng-select>
-    <label class="stat-desc-label">{{ skillDesc }}</label>
-    <label class="stat-desc-label">{{ skillInheritance }}</label>
+    <div style="display: flex; min-width: 400px;">
+        <ng-select
+            class="stat-component"
+            style="width: 220px;"
+            [items]="skills"
+            bindLabel="name"
+            bindValue="name"
+            [(ngModel)]="skillValue"
+            (change)="changedSelectedSkill($event)"
+            (clear)="clearEvent()"
+        >
+        </ng-select>
+        <ng-select
+            *ngIf="containsSkillLevel"
+            class="stat-component refine"
+            [items]="skillLevels"
+            bindLabel="value"
+            bindValue="value"
+            [(ngModel)]="skillLevel"
+            (change)="changedSelectedSkillLevel($event)"
+            [clearable]="subClearable"
+        >
+        </ng-select>
+    </div>
+    <label [innerHTML]="skillDesc" class="stat-desc-label" style="width: 400px"></label>
+    <label class="stat-desc-label" style="width: 350px; padding-left: 5px; font-size:x-small">{{ skillInheritance }}</label>
+    <label class="stat-desc-label" style="width: 50px">{{ sp }}</label>
 </div>

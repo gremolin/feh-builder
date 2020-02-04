@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { MergedStat, UnitStats } from '../data/data.types';
+import { SkillsPanelComponent } from './../skill/skills-panel.component';
 
 @Component({
     selector: 'stats-panel',
@@ -8,18 +9,13 @@ import { MergedStat, UnitStats } from '../data/data.types';
     styleUrls: ['./stats-panel.component.css']
 })
 export class StatsPanelComponent {
+    skillsPanel: SkillsPanelComponent;
+
     hardcodedLevel = 40;
     hardcodedRarity = 5;
 
     selectedUnit: UnitStats;
-    // level one values
-    /*
-    baseHp: number;
-    baseAtt: number;
-    baseSpd: number;
-    baseDef: number;
-    baseRes: number;
-*/
+
     baseStats: number[];
     growthStats: number[];
 
@@ -28,6 +24,13 @@ export class StatsPanelComponent {
     spd: number;
     def: number;
     res: number;
+
+    // stat numbers before skills applied.
+    statHp: number;
+    statAtt: number;
+    statSpd: number;
+    statDef: number;
+    statRes: number;
 
     mergeLevel: number;
     asset: number;
@@ -45,12 +48,8 @@ export class StatsPanelComponent {
         this.calculateStats();
     }
 
-    applyAsset(asset: any) {
+    applyAssetFlaw(asset: any, flaw: any) {
         this.asset = asset;
-        this.calculateStats();
-    }
-
-    applyFlaw(flaw: any) {
         this.flaw = flaw;
         this.calculateStats();
     }
@@ -72,6 +71,18 @@ export class StatsPanelComponent {
         this.calculateMerges();
         this.calculateDragonFlowers();
         this.calculateSummonerSupport();
+
+        this.statHp = this.hp;
+        this.statAtt = this.att;
+        this.statSpd = this.spd;
+        this.statDef = this.def;
+        this.statRes = this.res;
+
+        this.hp += this.skillsPanel.skillHp;
+        this.att += this.skillsPanel.skillAtt;
+        this.spd += this.skillsPanel.skillSpd;
+        this.def += this.skillsPanel.skillDef;
+        this.res += this.skillsPanel.skillRes;
     }
 
     resetStats() {
@@ -91,8 +102,17 @@ export class StatsPanelComponent {
             this.selectedUnit.growthRes
         ];
     }
+
+    removeSkillModifications() {
+        this.hp = this.statHp;
+        this.att = this.statAtt;
+        this.spd = this.statSpd;
+        this.def = this.statDef;
+        this.res = this.statRes;
+    }
+
     calculateAssetFlaw() {
-        //console.log('b4 asset/flaw', this.growthStats, this.asset, this.flaw, this.mergeLevel);
+        // console.log('b4 asset/flaw', this.growthStats, this.asset, this.flaw, this.mergeLevel);
         if (this.asset > -1) {
             this.growthStats[this.asset] += 5;
         }
@@ -311,28 +331,27 @@ export class StatsPanelComponent {
         }
     }
 
-    addToHp() {
-        this.hp++;
-        //console.log('this.hp', this.hp);
+    setSkillsPanel(skillsPanel: SkillsPanelComponent) {
+        this.skillsPanel = skillsPanel;
     }
 
-    addToAtt() {
-        this.att++;
-        //console.log('this.att', this.att);
+    addToHp(amount = 1) {
+        this.hp += amount;
     }
 
-    addToSpd() {
-        this.spd++;
-        //console.log('this.spd', this.spd);
+    addToAtt(amount = 1) {
+        this.att += amount;
     }
 
-    addToDef() {
-        this.def++;
-        //console.log('this.def', this.def);
+    addToSpd(amount = 1) {
+        this.spd += amount;
     }
 
-    addToRes() {
-        this.res++;
-        //console.log('this.res', this.res);
+    addToDef(amount = 1) {
+        this.def += amount;
+    }
+
+    addToRes(amount = 1) {
+        this.res += amount;
     }
 }

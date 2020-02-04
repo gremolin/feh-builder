@@ -1,4 +1,8 @@
 <div class="stat-component">
     <label class="stat-name-label">{{ statLabel }}</label>
-    <label class="stat-value-label">{{ statValue }}</label>
+    <label
+        class="stat-value-label"
+        [ngStyle]="{ 'background-color': highlight === 1 ? '#b3ffb3' : highlight === -1 ? '#ffb3b3' : 'unset' }"
+        >{{ statValue }}</label
+    >
 </div>

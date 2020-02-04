@@ -1,3 +1,5 @@
+import { SkillLevel } from './data.types';
+
 export const merges = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 export const assetFlaw = [
@@ -18,3 +20,13 @@ export const summonerSupports = [
     { key: 3, value: 'A' },
     { key: 4, value: 'S' }
 ];
+
+export const basicRefines: SkillLevel[] = [
+    { key: -10, value: '-', description: '', sp: 400 }, // key -9 to -1 reserved for personal refines
+    { key: 1, value: 'Att', description: '', sp: 400 },
+    { key: 2, value: 'Spd', description: '', sp: 400 },
+    { key: 3, value: 'Def', description: '', sp: 400 },
+    { key: 4, value: 'Res', description: '', sp: 400 }
+];
+
+export const meleeWeaponTypes = ['Sword', 'Axe', 'Lance', 'Beast', 'Breath'];

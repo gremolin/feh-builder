@@ -37,6 +37,9 @@ export class FehBuilderComponent implements OnInit {
     constructor(private unitDataService: UnitDataService) {}
 
     ngOnInit() {
+        this.skillsPanel.setStatsPanel(this.statsPanel);
+        this.statsPanel.setSkillsPanel(this.skillsPanel);
+
         this.selectedUnit = this.units[0].name;
         this.changedSelectedUnit(this.units[0]);
 
@@ -57,11 +60,17 @@ export class FehBuilderComponent implements OnInit {
     }
 
     changedAsset($event) {
-        this.statsPanel.applyAsset($event.key);
+        if (this.selectedAsset === this.selectedFlaw) {
+            this.selectedFlaw = -1;
+        }
+        this.statsPanel.applyAssetFlaw($event.key, this.selectedFlaw);
     }
 
     changedFlaw($event) {
-        this.statsPanel.applyFlaw($event.key);
+        if (this.selectedAsset === this.selectedFlaw) {
+            this.selectedAsset = -1;
+        }
+        this.statsPanel.applyAssetFlaw(this.selectedAsset, $event.key);
     }
 
     changedFlower($event) {

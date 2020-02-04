@@ -9,22 +9,32 @@ import { Skill } from '../data/data.types';
 })
 export class SkillComponent {
     @Output() skillChange = new EventEmitter();
+    @Output() skillLevelChange = new EventEmitter();
 
     @Input() skills;
-    skillLevels;
+    @Input() skillLevels;
 
     @Input() skillLabel: string;
     @Input() skillValue: Skill;
-    @Input() skillLevel: string;
+
+    @Input() containsSkillLevel: boolean;
+    @Input() skillLevel: any;
     @Input() skillDesc: string;
     @Input() skillInheritance: string;
 
+    @Input() sp: string;
+
+    @Input() subClearable: boolean;
+
     changedSelectedSkill($event) {
-        console.log('changed skill ' + this.skillLabel);
         this.skillChange.emit($event);
     }
 
     changedSelectedSkillLevel($event) {
-        console.log('changed skill Level ' + this.skillLevel);
+        this.skillLevelChange.emit($event);
+    }
+
+    clearEvent() {
+        this.changedSelectedSkill(undefined);
     }
 }
