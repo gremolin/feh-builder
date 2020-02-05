@@ -74,9 +74,38 @@ export class SkillsPanelComponent {
 
     applyUnitSkills(unitSkills: UnitSkills) {
         this.selectedUnit = unitSkills;
+        this.filterAvailableSkills();
         this.resetSkills();
 
         this.calculateSkills();
+    }
+
+    filterAvailableSkills() {
+        this.wpns = this.filterSkills(fehWeapons);
+        this.assists = this.filterSkills(fehAssists);
+        this.specials = this.filterSkills(fehSpecials);
+        this.aSkills = this.filterSkills(fehASkills);
+        this.bSkills = this.filterSkills(fehBSkills);
+        this.cSkills = this.filterSkills(fehCSkills);
+    }
+
+    filterSkills(skills: Skill[]): any[] {
+        skills = skills.filter(
+            skill =>
+                skill.name === '-' ||
+                (skill.restrictions &&
+                    (skill.restrictions.indexOf('None') > -1 ||
+                        (skill.restrictions.indexOf(this.selectedUnit.range) === -1 &&
+                            skill.restrictions.indexOf(this.selectedUnit.colour) === -1 &&
+                            skill.restrictions.indexOf(this.selectedUnit.move) === -1))) ||
+                (skill.required &&
+                    (skill.required.indexOf(this.selectedUnit.key) > -1 || skill.required.indexOf(this.selectedUnit.wpType) > -1))
+        );
+
+        skills = skills.sort((i1, i2) => {
+            return i1.name > i2.name ? 1 : -1;
+        });
+        return skills;
     }
 
     resetSkills() {
@@ -150,17 +179,23 @@ export class SkillsPanelComponent {
     }
 
     applySubSkill(subSkills: any[], selectedSkill: Skill): SkillLevel {
+        console.log('applysubskills', selectedSkill);
+        console.log('applysubskills', subSkills);
         subSkills.length = 0;
         if (selectedSkill.skillLevels) {
+            let x = 1;
             for (const sub of selectedSkill.skillLevels) {
                 subSkills.push({
-                    key: sub.value,
+                    key: x,
                     value: sub.value,
                     sp: sub.sp,
                     description: sub.description,
                     statIncreases: sub.statIncreases
                 });
+                x++;
             }
+            console.log('applysubskills', selectedSkill);
+            console.log('applysubskills', subSkills);
             return subSkills[subSkills.length - 1];
         }
         return undefined;
@@ -175,8 +210,6 @@ export class SkillsPanelComponent {
         const melee = meleeWeaponTypes.indexOf(this.selectedUnit.wpType) > -1;
 
         // wp
-        //  this.wpInheritance = this.buildInheritanceString(this.unitDataService.getUnitsByWeapon(this.wp));
-        //  this.wpSp = this.selectedWeapon.sp;
         this.updateSkill(this.selectedWeapon, this.wp, this.unitDataService.getUnitsByWeapon(this.selectedWeapon));
         this.wp.description = this.buildWeaponDesc();
         this.skillAtt += this.selectedWeapon.mt;
@@ -200,6 +233,10 @@ export class SkillsPanelComponent {
 
         this.updateSkill(this.selectedAssist, this.assist, this.unitDataService.getUnitsByAssist(this.selectedAssist));
         this.updateSkill(this.selectedSpecial, this.special, this.unitDataService.getUnitsBySpecial(this.selectedSpecial));
+        if (this.selectedSpecial && this.selectedSpecial.misc) {
+            this.special.description = 'Charge = ' + this.selectedSpecial.misc + ' : ' + this.special.description;
+        }
+
         this.updateSkill(
             this.selectedASkill,
             this.aSkill,
@@ -232,6 +269,10 @@ export class SkillsPanelComponent {
         this.statsPanel.addToSpd(this.skillSpd);
         this.statsPanel.addToDef(this.skillDef);
         this.statsPanel.addToRes(this.skillRes);
+
+        console.log('bskils', this.selectedBSkill);
+        console.log('bskils', this.selectedBSub);
+        console.log('bskils', this.bSkill);
     }
 
     updateStats(statKey: number): number {
@@ -257,6 +298,7 @@ export class SkillsPanelComponent {
     }
 
     updateSkill(skill: Skill, skillDisplay: SkillDisplay, units: any[], subSkill?: SkillLevel) {
+        console.log('skillDisplay1', skillDisplay);
         if (skill) {
             skillDisplay.name = skill.name;
             skillDisplay.description = skill.description;
@@ -268,11 +310,14 @@ export class SkillsPanelComponent {
             skillDisplay.inheritance = '';
             skillDisplay.sp = undefined;
         }
+        console.log('skillDisplay2', skillDisplay);
 
         if (subSkill) {
             skillDisplay.description += subSkill.description;
             skillDisplay.sp = subSkill.sp;
         }
+
+        console.log('skillDisplay3', skillDisplay);
     }
 
     buildWeaponDesc(): string {
@@ -357,14 +402,17 @@ export class SkillsPanelComponent {
         this.calculateSkills();
     }
 
-    handleASubSkillChange(aSub: Skill) {
-        this.selectedASub = aSub ? aSub : this.aSubSkills[this.aSubSkills.length - 1];
+    handleASubSkillChange(aSub) {
+        this.selectedASub = this.aSubSkills[aSub ? aSub.key - 1 : this.aSubSkills.length - 1]; // aSub ? aSub : this.aSubSkills[this.aSubSkills.length - 1];
         this.aSubSkill = aSub ? this.selectedASub.value : '';
         this.calculateSkills();
     }
 
     handleBSkillChange(bSkill: Skill) {
         if (bSkill) {
+            console.log('bSkill', bSkill);
+            console.log('selectedBSub', this.selectedBSub);
+            console.log('selectedBSub', this.bSubSkills);
             this.selectedBSkill = bSkill;
             this.selectedBSub = this.applySubSkill(this.bSubSkills, this.selectedBSkill);
             this.bSubSkill = this.selectedBSub ? this.selectedBSub.value : '';
@@ -372,12 +420,18 @@ export class SkillsPanelComponent {
             this.selectedBSkill = fehBSkills[0];
             this.selectedBSub = undefined;
         }
+        console.log('bSkill', bSkill);
+        console.log('selectedBSkill', this.selectedBSkill);
+        console.log('bSubSkills', this.bSubSkills);
         this.calculateSkills();
     }
 
-    handleBSubSkillChange(bSub: Skill) {
-        this.selectedBSub = bSub ? bSub : this.bSubSkills[this.bSubSkills.length - 1];
+    handleBSubSkillChange(bSub) {
+        console.log('handleBSubSkillChange', this.bSubSkills);
+        console.log('handleBSubSkillChange', bSub);
+        this.selectedBSub = this.bSubSkills[bSub ? bSub.key - 1 : this.bSubSkills.length - 1];
         this.bSubSkill = bSub ? this.selectedBSub.value : '';
+        console.log('handleBSubSkillChange', this.bSubSkill);
         this.calculateSkills();
     }
 
@@ -393,8 +447,8 @@ export class SkillsPanelComponent {
         this.calculateSkills();
     }
 
-    handleCSubSkillChange(cSub: Skill) {
-        this.selectedCSub = cSub ? cSub : this.cSubSkills[this.cSubSkills.length - 1];
+    handleCSubSkillChange(cSub) {
+        this.selectedCSub = this.cSubSkills[cSub ? cSub.key - 1 : this.cSubSkills.length - 1]; // cSub ? cSub : this.cSubSkills[this.cSubSkills.length - 1];
         this.cSubSkill = cSub ? this.selectedCSub.value : '';
         this.calculateSkills();
     }
@@ -411,8 +465,8 @@ export class SkillsPanelComponent {
         this.calculateSkills();
     }
 
-    handleSealSubChange(sealSub: Skill) {
-        this.selectedSealSub = sealSub ? sealSub : this.sealSubs[this.sealSubs.length - 1];
+    handleSealSubChange(sealSub) {
+        this.selectedSealSub = this.sealSubs[sealSub ? sealSub.key - 1 : this.sealSubs.length - 1]; // sealSub ? sealSub : this.sealSubs[this.sealSubs.length - 1];
         this.sealSub = sealSub ? this.selectedSealSub.value : '';
         this.calculateSkills();
     }

@@ -1,6 +1,6 @@
-<label style="padding-left: 55px">Skill</label>
-<label style="padding-left: 220px">Effect</label>
-<label style="padding-left: 250px">Inherited From</label>
+<label style="padding-left: 55px; font-weight: bold;">Skill</label>
+<label style="padding-left: 292px; font-weight: bold;">Effect</label>
+<label style="padding-left: 370px; font-weight: bold;">Inherited From</label>
 <div style="display: flex; flex-direction: column;">
     <skill-component
         [skills]="wpns"
@@ -16,6 +16,7 @@
         (skillLevelChange)="handleWeaponRefineChange($event)"
         [subClearable]="true"
     ></skill-component>
+
     <skill-component
         [skills]="assists"
         skillLabel="Assist"

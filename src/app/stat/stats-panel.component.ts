@@ -354,4 +354,12 @@ export class StatsPanelComponent {
     addToRes(amount = 1) {
         this.res += amount;
     }
+
+    highlightStat(indicator: number): number {
+        return this.asset === indicator && this.flaw !== indicator
+            ? 1
+            : this.flaw === indicator && this.asset !== indicator && !(this.mergeLevel > 0)
+            ? -1
+            : 0;
+    }
 }

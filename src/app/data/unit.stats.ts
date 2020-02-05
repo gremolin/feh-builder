@@ -1,6 +1,6 @@
 import { UnitStats } from './data.types';
 
-//month is -1
+// month is -1
 export const unitStats: UnitStats[] = [
     {
         key: 'Abel: The Panther',

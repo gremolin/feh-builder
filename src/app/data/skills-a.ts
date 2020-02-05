@@ -24,6 +24,13 @@ export const fehASkills: Skill[] = [
                 sp: 160,
                 statIncreases: [{ key: 0, value: 5 }]
             }
-        ]
+        ],
+        restrictions: ['None']
+    },
+    {
+        name: 'Close Counter',
+        description: 'Unit can counterattack regardless of foe`s range.',
+        sp: 300,
+        restrictions: ['Close']
     }
 ];

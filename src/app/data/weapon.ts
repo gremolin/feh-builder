@@ -2,10 +2,22 @@ import { Weapon } from './data.types';
 
 export const fehWeapons: Weapon[] = [
     { name: '-', mt: 0, description: '-', sp: undefined },
-    { name: 'Iron Lance', mt: 6, description: '', sp: 50 },
-    { name: 'Steel Lance', mt: 8, description: '', sp: 100 },
-    { name: 'Brave Lance', mt: 5, description: '', sp: 200 },
-    { name: 'Brave Lance+', mt: 8, description: '', sp: 300 },
+    { name: 'Iron Lance', mt: 6, description: '', sp: 50, required: ['Lance'] },
+    { name: 'Steel Lance', mt: 8, description: '', sp: 100, required: ['Lance'] },
+    {
+        name: 'Brave Lance',
+        mt: 5,
+        description: 'Inflicts Spd-5. If unit initiates combat, unit attacks twice.',
+        sp: 200,
+        required: ['Lance']
+    },
+    {
+        name: 'Brave Lance+',
+        mt: 8,
+        description: 'Inflicts Spd-5. If unit initiates combat, unit attacks twice.',
+        sp: 300,
+        required: ['Lance']
+    },
     {
         name: 'Panther Lance',
         mt: 16,
@@ -19,16 +31,18 @@ export const fehWeapons: Weapon[] = [
                 sp: 400,
                 statIncreases: [{ key: 0, value: 3 }]
             }
-        ]
+        ],
+        required: ['Abel: The Panther']
     },
-    { name: 'Light', mt: 4, description: '', sp: 50 },
-    { name: 'Ellight', mt: 6, description: '', sp: 100 },
-    { name: 'Shine', mt: 9, description: '', sp: 200 },
+    { name: 'Light', mt: 4, description: '', sp: 50, required: ['Blue Tome'] },
+    { name: 'Ellight', mt: 6, description: '', sp: 100, required: ['Blue Tome'] },
+    { name: 'Shine', mt: 9, description: '', sp: 200, required: ['Blue Tome'] },
     {
         name: 'Imbued Koma',
         mt: 14,
         description:
             'Accelerates Special trigger (cooldown count-1). At start of combat, if Special is ready, grants Atk/Spd/Def/Res+5 during combat and foe cannot make a follow-up attack.',
-        sp: 400
+        sp: 400,
+        required: ['Alfonse: Askran Duo']
     }
 ];

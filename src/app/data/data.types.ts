@@ -26,7 +26,7 @@ export interface MergedStat {
 }
 
 export interface UnitStat {
-    //keys: 0 = hp, 1 = att
+    // keys: 0 = hp, 1 = att
     key: number;
     value: number;
 }
@@ -40,6 +40,9 @@ export interface UnitSkillInheritance {
 export interface UnitSkills {
     key: string;
     wpType: string;
+    range: string;
+    colour: string;
+    move: string;
     wps: UnitSkillInheritance[];
     assists?: UnitSkillInheritance[];
     specials?: UnitSkillInheritance[];
@@ -61,7 +64,9 @@ export interface Skill {
     description: string;
     sp?: number;
     skillLevels?: SkillLevel[];
+    required?: string[];
     restrictions?: string[];
+    misc?: any;
 }
 
 export interface Weapon extends Skill {

@@ -1,87 +1,102 @@
-<div style="display: flex; flex-direction: column; ">
-    <div
-        id="unit-container"
-        style=" display: flex; justify-content: space-between; flex-direction: column;max-width: 950px; padding-left: 25%; padding-top: 20px;"
-    >
-        <div id="unit-selector-container" style="display: flex; flex-direction: column;">
-            <label>Unit:</label>
-            <ng-select
-                class="stat-component"
-                style="width: 350px;"
-                [items]="units"
-                bindLabel="name"
-                bindValue="name"
-                [(ngModel)]="selectedUnit"
-                (change)="changedSelectedUnit($event)"
-            >
-            </ng-select>
-        </div>
-        <div id="unit-stats-mods" style="display: flex;padding-top: 30px;">
-            <div>
-                <label>Merges</label>
+<div style="width: 100%;">
+    <div class="header">
+        <div class="header-container">
+            <div class="header-container header-search">
+                <label class="header-select" style="padding-right: 10px; padding-top: 12px;">Select Unit:</label>
                 <ng-select
-                    class="stat-component"
-                    [items]="merges"
-                    [(ngModel)]="selectedMerge"
+                    class="header-select"
+                    style="width: 600px;"
+                    [items]="units"
+                    bindLabel="name"
+                    bindValue="name"
+                    [(ngModel)]="selectedUnit"
                     [clearable]="false"
-                    (change)="changedMerge($event)"
-                >
-                </ng-select>
-            </div>
-            <div>
-                <label>Asset</label>
-                <ng-select
-                    class="stat-component"
-                    [items]="assetFlaw"
-                    (change)="changedAsset($event)"
-                    [clearable]="false"
-                    bindLabel="value"
-                    bindValue="key"
-                    [(ngModel)]="selectedAsset"
-                >
-                </ng-select>
-            </div>
-            <div>
-                <label>Flaw</label>
-                <ng-select
-                    class="stat-component"
-                    [items]="assetFlaw"
-                    (change)="changedFlaw($event)"
-                    [clearable]="false"
-                    bindLabel="value"
-                    bindValue="key"
-                    [(ngModel)]="selectedFlaw"
-                >
-                </ng-select>
-            </div>
-            <div>
-                <label>Dragon Flowers</label>
-                <ng-select
-                    class="stat-component"
-                    [items]="flowers"
-                    (change)="changedFlower($event)"
-                    [clearable]="false"
-                    [(ngModel)]="selectedFlower"
-                >
-                </ng-select>
-            </div>
-            <div>
-                <label>Summoner Support</label>
-                <ng-select
-                    class="stat-component"
-                    [items]="supports"
-                    (change)="changedSupport($event)"
-                    [clearable]="false"
-                    bindLabel="value"
-                    bindValue="key"
-                    [(ngModel)]="selectedSupport"
+                    (change)="changedSelectedUnit($event)"
                 >
                 </ng-select>
             </div>
         </div>
     </div>
-    <div id="stats-moves-panel" style="display: flex; padding-left: 10%; padding-top: 50px">
-        <skills-panel #skillsPanel style="padding-left: 50px;"></skills-panel>
-        <stats-panel #statsPanel style="padding-left: 50px;"></stats-panel>
+
+    <div class="body" style="display: block; position: relative; padding-top: 56px; ">
+        <div class="body-container" style="display: block; width: 768px; margin:auto">
+            <div style="padding-top: 10px;">
+                <h6>Stat Modifiers</h6>
+            </div>
+            <div id="unit-stats-mods" style="display: flex; justify-content: center;">
+                <div>
+                    <label>Merges</label>
+                    <ng-select
+                        class="stat-modifier"
+                        [items]="merges"
+                        [(ngModel)]="selectedMerge"
+                        [clearable]="false"
+                        (change)="changedMerge($event)"
+                    >
+                    </ng-select>
+                </div>
+                <div>
+                    <label>Asset</label>
+                    <ng-select
+                        class="stat-modifier"
+                        [items]="assetFlaw"
+                        (change)="changedAsset($event)"
+                        [clearable]="false"
+                        bindLabel="value"
+                        bindValue="key"
+                        [(ngModel)]="selectedAsset"
+                    >
+                    </ng-select>
+                </div>
+                <div>
+                    <label>Flaw</label>
+                    <ng-select
+                        class="stat-modifier"
+                        [items]="assetFlaw"
+                        (change)="changedFlaw($event)"
+                        [clearable]="false"
+                        bindLabel="value"
+                        bindValue="key"
+                        [(ngModel)]="selectedFlaw"
+                    >
+                    </ng-select>
+                </div>
+                <div>
+                    <label>Flowers</label>
+                    <ng-select
+                        class="stat-modifier"
+                        [items]="flowers"
+                        (change)="changedFlower($event)"
+                        [clearable]="false"
+                        [(ngModel)]="selectedFlower"
+                    >
+                    </ng-select>
+                </div>
+                <div>
+                    <label>Support</label>
+                    <ng-select
+                        class="stat-modifier"
+                        [items]="supports"
+                        (change)="changedSupport($event)"
+                        [clearable]="false"
+                        bindLabel="value"
+                        bindValue="key"
+                        [(ngModel)]="selectedSupport"
+                    >
+                    </ng-select>
+                </div>
+            </div>
+            <div style="padding-top: 30px;">
+                <h6>Unit Stats</h6>
+            </div>
+            <stats-panel #statsPanel></stats-panel>
+            <h6>Units Skills</h6>
+        </div>
+        <div class="body-container" style="display: block; width: 1200px; margin:auto">
+            <div style="padding-top: 30px;"></div>
+            <div id="stats-moves-panel" style="display: flex;">
+                <skills-panel #skillsPanel></skills-panel>
+            </div>
+        </div>
     </div>
 </div>
