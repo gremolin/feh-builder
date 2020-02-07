@@ -1,5 +1,5 @@
 import { Skill } from './data.types';
-import { closeRange, none, staff } from './hardcoded';
+import { cavalry, closeRange, flying, none, staff } from './hardcoded';
 
 export const fehASkills: Skill[] = [
     { name: '-', description: '-' },
@@ -517,12 +517,621 @@ export const fehASkills: Skill[] = [
             },
             {
                 value: '2',
-                description: 'At start of combat, if unit`s HP ≥ foe`s HP+4, grants Def+2 during combat.',
+                description: 'At start of combat, if unit`s HP ≥ foe`s HP+3, grants Def+4 during combat.',
                 sp: 100
             },
             {
                 value: '3',
-                description: 'At start of combat, if unit`s HP ≥ foe`s HP+5, grants Def+2 during combat.',
+                description: 'At start of combat, if unit`s HP ≥ foe`s HP+3, grants Def+6 during combat.',
+                sp: 200
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Fierce Stance',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If foe initiates combat, grants Atk+2 during combat.',
+                sp: 50
+            },
+            {
+                value: '2',
+                description: 'If foe initiates combat, grants Atk+4 during combat.',
+                sp: 100
+            },
+            {
+                value: '3',
+                description: 'If foe initiates combat, grants Atk+6 during combat.',
+                sp: 200
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Fire Boost',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'At start of combat, if unit`s HP ≥ foe`s HP+3, grants Atk+2 during combat.',
+                sp: 50
+            },
+            {
+                value: '2',
+                description: 'At start of combat, if unit`s HP ≥ foe`s HP+3, grants Atk+4 during combat.',
+                sp: 100
+            },
+            {
+                value: '3',
+                description: 'At start of combat, if unit`s HP ≥ foe`s HP+3, grants Atk+6 during combat.',
+                sp: 200
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Flashing Blade',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'If unit`s Spd ≥ foe`s Spd+5, grants Special cooldown charge +1 per unit`s attack. (Only highest value applied. Does not stack.)',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'If unit`s Spd ≥ foe`s Spd+5, grants Special cooldown charge +1 per unit`s attack. (Only highest value applied. Does not stack.)',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'If unit`s Spd ≥ foe`s Spd+5, grants Special cooldown charge +1 per unit`s attack. (Only highest value applied. Does not stack.)',
+                sp: 240
+            },
+            {
+                value: '4',
+                description:
+                    'If unit`s Spd > foe`s Spd, grants Special cooldown charge +1 and deals +5 damage per unit`s attack. (Only highest value applied. Does not stack.) ',
+                sp: 300
+            }
+        ],
+        restrictions: [cavalry, flying, staff]
+    },
+    {
+        name: 'Fortress Def',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Grants Def+3. Inflicts Atk-3.',
+                sp: 40,
+                statIncreases: [
+                    { key: 1, value: -3 },
+                    { key: 3, value: 3 }
+                ]
+            },
+            {
+                value: '2',
+                description: 'Grants Def+4. Inflicts Atk-3.',
+                sp: 80,
+                statIncreases: [
+                    { key: 1, value: -3 },
+                    { key: 3, value: 4 }
+                ]
+            },
+            {
+                value: '3',
+                description: 'Grants Def+5. Inflicts Atk-3.',
+                sp: 160,
+                statIncreases: [
+                    { key: 1, value: -3 },
+                    { key: 3, value: 5 }
+                ]
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Fortress Res',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Grants Res+3. Inflicts Atk-3.',
+                sp: 40,
+                statIncreases: [
+                    { key: 1, value: -3 },
+                    { key: 4, value: 3 }
+                ]
+            },
+            {
+                value: '2',
+                description: 'Grants Res+4. Inflicts Atk-3.',
+                sp: 80,
+                statIncreases: [
+                    { key: 1, value: -3 },
+                    { key: 4, value: 4 }
+                ]
+            },
+            {
+                value: '3',
+                description: 'Grants Res+5. Inflicts Atk-3.',
+                sp: 160,
+                statIncreases: [
+                    { key: 1, value: -3 },
+                    { key: 4, value: 5 }
+                ]
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Heavy Blade',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'If unit`s Atk ≥ foe`s Atk+5, grants Special cooldown charge +1 per unit`s attack. (Only highest value applied. Does not stack.)',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'If unit`s Atk ≥ foe`s Atk+3, grants Special cooldown charge +1 per unit`s attack. (Only highest value applied. Does not stack.)',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'If unit`s Atk > foe`s Atk, grants Special cooldown charge +1 per unit`s attack. (Only highest value applied. Does not stack.)',
+                sp: 240
+            },
+            {
+                value: '4',
+                description:
+                    'If unit`s Atk > foe`s Atk, grants Special cooldown charge +1 and deals +5 damage to foe per unit`s attack. (Only highest value applied. Does not stack.)',
+                sp: 300
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
+        name: 'HP / Atk',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Grants HP+3, Atk+1.',
+                sp: 100,
+                statIncreases: [
+                    { key: 0, value: 3 },
+                    { key: 1, value: 1 }
+                ]
+            },
+            {
+                value: '2',
+                description: 'Grants HP+4, Atk+2.',
+                sp: 200,
+                statIncreases: [
+                    { key: 0, value: 4 },
+                    { key: 1, value: 2 }
+                ]
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'HP / Spd',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Grants HP+3, Spd+1.',
+                sp: 100,
+                statIncreases: [
+                    { key: 0, value: 3 },
+                    { key: 2, value: 1 }
+                ]
+            },
+            {
+                value: '2',
+                description: 'Grants HP+4, Spd+2.',
+                sp: 200,
+                statIncreases: [
+                    { key: 0, value: 4 },
+                    { key: 2, value: 2 }
+                ]
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'HP / Def',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Grants HP+3, Def+1.',
+                sp: 100,
+                statIncreases: [
+                    { key: 0, value: 3 },
+                    { key: 3, value: 1 }
+                ]
+            },
+            {
+                value: '2',
+                description: 'Grants HP+4, Def+2.',
+                sp: 200,
+                statIncreases: [
+                    { key: 0, value: 4 },
+                    { key: 3, value: 2 }
+                ]
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'HP / Res',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Grants HP+3, Res+1.',
+                sp: 100,
+                statIncreases: [
+                    { key: 0, value: 3 },
+                    { key: 4, value: 1 }
+                ]
+            },
+            {
+                value: '2',
+                description: 'Grants HP+4, Res+2.',
+                sp: 200,
+                statIncreases: [
+                    { key: 0, value: 4 },
+                    { key: 4, value: 2 }
+                ]
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Iote`s Shield',
+        description: '',
+        sp: 200,
+        required: [flying]
+    },
+    {
+        name: 'Mirror Stance',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If foe initiates combat, grants Atk/Res+2 during combat. ',
+                sp: 120
+            },
+            {
+                value: '2',
+                description: 'If foe initiates combat, grants Atk/Res+4 during combat. ',
+                sp: 240
+            },
+            {
+                value: '3',
+                description:
+                    'If foe initiates combat, grants Atk/Res+6 during combat and inflicts Special cooldown charge -1 on foe per attack. (Only highest value applied. Does not stack.)',
+                sp: 300
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
+        name: 'Resistance',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Resistance +1',
+                sp: 30,
+                statIncreases: [{ key: 4, value: 1 }]
+            },
+            {
+                value: '2',
+                description: 'Resistance +2',
+                sp: 60,
+                statIncreases: [{ key: 4, value: 2 }]
+            },
+            {
+                value: '3',
+                description: 'Resistance +3',
+                sp: 120,
+                statIncreases: [{ key: 4, value: 3 }]
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Spd / Def',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Grants Spd/Def+1.',
+                sp: 80,
+                statIncreases: [
+                    { key: 2, value: 1 },
+                    { key: 3, value: 1 }
+                ]
+            },
+            {
+                value: '2',
+                description: 'Grants Spd/Def+2.',
+                sp: 160,
+                statIncreases: [
+                    { key: 2, value: 2 },
+                    { key: 3, value: 2 }
+                ]
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Spd / Res',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Grants Spd/Res+1.',
+                sp: 80,
+                statIncreases: [
+                    { key: 2, value: 1 },
+                    { key: 4, value: 1 }
+                ]
+            },
+            {
+                value: '2',
+                description: 'Grants Spd/Res+2.',
+                sp: 160,
+                statIncreases: [
+                    { key: 2, value: 2 },
+                    { key: 4, value: 2 }
+                ]
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Spd / Res Bond',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If unit is adjacent to an ally, grants Spd/Res+3 during combat.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description: 'If unit is adjacent to an ally, grants Spd/Res+4 during combat.',
+                sp: 120
+            },
+            {
+                value: '3',
+                description: 'If unit is adjacent to an ally, grants Spd/Res+5 during combat.',
+                sp: 240
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
+        name: 'Speed',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Speed +1',
+                sp: 30,
+                statIncreases: [{ key: 2, value: 1 }]
+            },
+            {
+                value: '2',
+                description: 'Speed +2',
+                sp: 60,
+                statIncreases: [{ key: 2, value: 2 }]
+            },
+            {
+                value: '3',
+                description: 'Speed +3',
+                sp: 120,
+                statIncreases: [{ key: 2, value: 3 }]
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Steady Posture',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If foe initiates combat, grants Spd/Def+2 during combat.',
+                sp: 120
+            },
+            {
+                value: '2',
+                description: 'If foe initiates combat, grants Spd/Def+4 during combat.',
+                sp: 240
+            },
+            {
+                value: '3',
+                description:
+                    'If foe initiates combat, grants Spd/Def+6 to unit during combat and inflicts Special cooldown charge -1 on foe per attack. (Only highest value applied. Does not stack.)',
+                sp: 300
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
+        name: 'Steady Stance',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If foe initiates combat, grants Def+2 during combat.',
+                sp: 50
+            },
+            {
+                value: '2',
+                description: 'If foe initiates combat, grants Def+2 during combat. ',
+                sp: 100
+            },
+            {
+                value: '3',
+                description: 'If foe initiates combat, grants Def+2 during combat. ',
+                sp: 200
+            },
+            {
+                value: '4',
+                description:
+                    'If foe initiates combat, grants Def+8 during combat and inflicts Special cooldown charge -1 on foe per attack. (Only highest value applied. Does not stack.)',
+                sp: 300
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Swift Sparrow',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If unit initiates combat, grants Atk/Spd+2 during combat.',
+                sp: 120
+            },
+            {
+                value: '2',
+                description: 'If unit initiates combat, grants Atk/Spd+2 during combat.',
+                sp: 240
+            },
+            {
+                value: '3',
+                description: 'If unit initiates combat, grants Atk+6, Spd+7 during combat. ',
+                sp: 300
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
+        name: 'Swift Stance',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If foe initiates combat, grants Spd/Res+2 during combat. ',
+                sp: 120
+            },
+            {
+                value: '2',
+                description: 'If foe initiates combat, grants Spd/Res+4 during combat. ',
+                sp: 240
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
+        name: 'Warding Blow',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If unit initiates combat, grants Res+2 during combat.',
+                sp: 50
+            },
+            {
+                value: '2',
+                description: 'If unit initiates combat, grants Res+4 during combat.',
+                sp: 100
+            },
+            {
+                value: '3',
+                description: 'If unit initiates combat, grants Res+6 during combat.',
+                sp: 200
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
+        name: 'Warding Stance',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If foe initiates combat, grants Res+2 during combat.',
+                sp: 50
+            },
+            {
+                value: '2',
+                description: 'If foe initiates combat, grants Res+4 during combat.',
+                sp: 100
+            },
+            {
+                value: '3',
+                description: 'If foe initiates combat, grants Res+6 during combat.',
+                sp: 200
+            },
+            {
+                value: '4',
+                description:
+                    'If foe initiates combat, grants Res+8 during combat and inflicts Special cooldown charge -1 on foe per attack. (Only highest value applied. Does not stack.)',
+                sp: 300
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Water Boost',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'At start of combat, if unit`s HP ≥ foe`s HP+3, grants Res+2 during combat.',
+                sp: 50
+            },
+            {
+                value: '2',
+                description: 'At start of combat, if unit`s HP ≥ foe`s HP+3, grants Res+4 during combat.',
+                sp: 100
+            },
+            {
+                value: '3',
+                description: 'At start of combat, if unit`s HP ≥ foe`s HP+3, grants Res+6 during combat.',
+                sp: 200
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Wind Boost',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'At start of combat, if unit`s HP ≥ foe`s HP+3, grants Spd+2 during combat.',
+                sp: 50
+            },
+            {
+                value: '2',
+                description: 'At start of combat, if unit`s HP ≥ foe`s HP+3, grants Spd+4 during combat.',
+                sp: 100
+            },
+            {
+                value: '3',
+                description: 'At start of combat, if unit`s HP ≥ foe`s HP+3, grants Spd+6 during combat.',
                 sp: 200
             }
         ],
