@@ -1,12 +1,13 @@
 import { UnitSkills } from './data.types';
+import { blue, blueTome, cavalry, closeRange, distant, flying, infantry, lance } from './hardcoded';
 
 export const unitSkills: UnitSkills[] = [
     {
         key: 'Abel: The Panther',
-        wpType: 'Lance',
-        range: 'Close',
-        colour: 'Blue',
-        move: 'Cavalry',
+        wpType: lance,
+        range: closeRange,
+        colour: blue,
+        move: cavalry,
         wps: [
             { key: 'Iron Lance', level: 1 },
             { key: 'Steel Lance', level: 2 },
@@ -31,10 +32,10 @@ export const unitSkills: UnitSkills[] = [
     },
     {
         key: 'Alfonse: Askran Duo',
-        wpType: 'Blue Tome',
-        range: 'Distant',
-        colour: 'Blue',
-        move: 'Infantry',
+        wpType: blueTome,
+        range: distant,
+        colour: blueTome,
+        move: infantry,
         wps: [
             { key: 'Light', level: 1 },
             { key: 'Ellight', level: 2 },
@@ -60,10 +61,10 @@ export const unitSkills: UnitSkills[] = [
     },
     {
         key: 'Valter: Dark Moonstone',
-        wpType: 'Lance',
-        range: 'Close',
-        colour: 'Blue',
-        move: 'Flying',
+        wpType: lance,
+        range: closeRange,
+        colour: blue,
+        move: flying,
         wps: [{ key: 'Iron Lance', level: 1 }]
     }
 ];
