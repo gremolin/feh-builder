@@ -47,6 +47,14 @@ label {
     font-weight: 400;
 }
 
+.header-select.ng-select .ng-select-container .ng-value-container .ng-input > input {
+    color: rgb(252, 252, 252);
+}
+
+.ng-select.ng-select-single.show-full-contents .ng-dropdown-panel .ng-dropdown-panel-items {
+    max-height: unset;
+}
+
 .stat-modifier {
     width: 95px;
     padding-right: 10px;

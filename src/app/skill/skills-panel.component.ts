@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { fehAssists } from './../data/assist';
-import { Skill, SkillDisplay, SkillLevel, UnitSkills, Weapon } from './../data/data.types';
+import { Skill, SkillDisplay, SkillLevel, Unit, UnitSkills, Weapon } from './../data/data.types';
 import { basicRefines, meleeWeaponTypes } from './../data/misc.stats';
 import { fehSeals } from './../data/seals';
 import { fehASkills } from './../data/skills-a';
@@ -33,7 +33,8 @@ export class SkillsPanelComponent {
     seals = fehSeals;
     sealSubs: any[] = [];
 
-    selectedUnit: UnitSkills;
+    selectedUnit: Unit;
+    selectedUnitSkills: UnitSkills;
     selectedWeapon: Weapon;
     selectedRefine: any;
     selectedAssist: Skill;
@@ -72,8 +73,10 @@ export class SkillsPanelComponent {
 
     constructor(private unitDataService: UnitDataService) {}
 
-    applyUnitSkills(unitSkills: UnitSkills) {
-        this.selectedUnit = unitSkills;
+    applyUnitSkills(unit: Unit) {
+        this.selectedUnit = unit;
+        this.selectedUnitSkills = this.unitDataService.getSkillsByUnit(unit.name);
+
         this.filterAvailableSkills();
         this.resetSkills();
 
@@ -100,7 +103,7 @@ export class SkillsPanelComponent {
                             skill.restrictions.indexOf(this.selectedUnit.colour) === -1 &&
                             skill.restrictions.indexOf(this.selectedUnit.move) === -1))) ||
                 (skill.required &&
-                    (skill.required.indexOf(this.selectedUnit.key) > -1 || skill.required.indexOf(this.selectedUnit.wpType) > -1))
+                    (skill.required.indexOf(this.selectedUnitSkills.key) > -1 || skill.required.indexOf(this.selectedUnit.wpType) > -1))
         );
 
         skills = skills.sort((i1, i2) => {
@@ -123,40 +126,49 @@ export class SkillsPanelComponent {
         this.selectedSeal = undefined;
         this.selectedSealSub = undefined;
 
-        this.wp.name = this.selectedUnit.wps[this.selectedUnit.wps.length - 1].key;
+        this.refines = [];
+        this.aSubSkills = [];
+        this.bSubSkills = [];
+        this.cSubSkills = [];
+        this.sealSubs = [];
+
+        this.wp.name = this.selectedUnitSkills.wps[this.selectedUnitSkills.wps.length - 1].key;
         this.selectedWeapon = this.unitDataService.getWeaponByName(this.wp.name);
         this.applyRefine();
 
-        if (this.selectedUnit.assists) {
-            this.assist.name = this.selectedUnit.assists[this.selectedUnit.assists.length - 1].key;
+        if (this.selectedUnitSkills.assists) {
+            this.assist.name = this.selectedUnitSkills.assists[this.selectedUnitSkills.assists.length - 1].key;
             this.selectedAssist = this.unitDataService.getAssistByName(this.assist.name);
         }
 
-        if (this.selectedUnit.specials) {
-            this.special.name = this.selectedUnit.specials[this.selectedUnit.specials.length - 1].key;
+        if (this.selectedUnitSkills.specials) {
+            this.special.name = this.selectedUnitSkills.specials[this.selectedUnitSkills.specials.length - 1].key;
             this.selectedSpecial = this.unitDataService.getSpecialByName(this.special.name);
         }
 
-        console.log('aSubSkills', this.selectedUnit.aSkills);
-        if (this.selectedUnit.aSkills) {
-            this.aSkill.name = this.selectedUnit.aSkills[this.selectedUnit.aSkills.length - 1].key;
+        if (this.selectedUnitSkills.aSkills) {
+            const selectedSkill = this.selectedUnitSkills.aSkills[this.selectedUnitSkills.aSkills.length - 1];
+            this.aSkill.name = selectedSkill.key;
             this.selectedASkill = this.unitDataService.getASkillByName(this.aSkill.name);
-            console.log('aSubSkills', this.aSubSkills);
-            this.selectedASub = this.applySubSkill(this.aSubSkills, this.selectedASkill);
+            console.log('this.aSubSkills', this.aSubSkills);
+            console.log('selectedSkill', selectedSkill);
+            this.selectedASub = this.applySubSkill(this.aSubSkills, this.selectedASkill, selectedSkill.subKey);
             this.aSubSkill = this.selectedASub ? this.selectedASub.value : undefined;
         }
 
-        if (this.selectedUnit.bSkills) {
-            this.bSkill.name = this.selectedUnit.bSkills[this.selectedUnit.bSkills.length - 1].key;
+        if (this.selectedUnitSkills.bSkills) {
+            const selectedSkill = this.selectedUnitSkills.bSkills[this.selectedUnitSkills.bSkills.length - 1];
+            this.bSkill.name = selectedSkill.key;
             this.selectedBSkill = this.unitDataService.getBSkillByName(this.bSkill.name);
-            this.selectedBSub = this.applySubSkill(this.bSubSkills, this.selectedBSkill);
+            this.selectedBSub = this.applySubSkill(this.bSubSkills, this.selectedBSkill, selectedSkill.subKey);
             this.bSubSkill = this.selectedBSub ? this.selectedBSub.value : undefined;
         }
 
-        if (this.selectedUnit.cSkills) {
-            this.cSkill.name = this.selectedUnit.cSkills[this.selectedUnit.cSkills.length - 1].key;
+        if (this.selectedUnitSkills.cSkills) {
+            const selectedSkill = this.selectedUnitSkills.cSkills[this.selectedUnitSkills.cSkills.length - 1];
+            this.cSkill.name = selectedSkill.key;
             this.selectedCSkill = this.unitDataService.getCSkillByName(this.cSkill.name);
-            this.selectedCSub = this.applySubSkill(this.cSubSkills, this.selectedCSkill);
+            this.selectedCSub = this.applySubSkill(this.cSubSkills, this.selectedCSkill, selectedSkill.subKey);
             this.cSubSkill = this.selectedCSub ? this.selectedCSub.value : undefined;
         }
     }
@@ -181,7 +193,9 @@ export class SkillsPanelComponent {
         }
     }
 
-    applySubSkill(subSkills: any[], selectedSkill: Skill): SkillLevel {
+    applySubSkill(subSkills: any[], selectedSkill: Skill, levelToSelect?: string, unitRarity?: number): SkillLevel {
+        // TODO implement rarity select
+
         //console.log('applysubskills', selectedSkill);
         //console.log('applysubskills', subSkills);
         subSkills.length = 0;
@@ -199,7 +213,7 @@ export class SkillsPanelComponent {
             }
             //console.log('applysubskills', selectedSkill);
             //console.log('applysubskills', subSkills);
-            return subSkills[subSkills.length - 1];
+            return subSkills[levelToSelect ? +levelToSelect - 1 : subSkills.length - 1];
         }
         return undefined;
     }
@@ -280,6 +294,7 @@ export class SkillsPanelComponent {
 
     updateStats(statKey: number): number {
         let stat = 0;
+        stat += this.updateStat(statKey, { value: '0', description: '', sp: 0, statIncreases: this.selectedWeapon.statIncreases });
         stat += this.updateStat(statKey, this.selectedRefine);
         stat += this.updateStat(statKey, this.selectedASub);
         stat += this.updateStat(statKey, this.selectedBSub);
@@ -332,7 +347,7 @@ export class SkillsPanelComponent {
             this.selectedWeapon.mt +
             ' - ' +
             this.selectedWeapon.description +
-            (this.selectedRefine ? ' ' + "<font color='green'>" + this.selectedRefine.description + '</font>' : '')
+            (this.selectedRefine ? '\n' + "<font color='green'>" + this.selectedRefine.description + '</font>' : '')
         );
     }
 

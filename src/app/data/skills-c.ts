@@ -586,6 +586,28 @@ export const fehCSkills: Skill[] = [
         restrictions: [staff]
     },
     {
+        name: 'Def Smoke',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Inflicts Def-3 on foes within 2 spaces of target through their next actions after combat. ',
+                sp: 60
+            },
+            {
+                value: '2',
+                description: 'Inflicts Def-5 on foes within 2 spaces of target through their next actions after combat. ',
+                sp: 120
+            },
+            {
+                value: '3',
+                description: 'Inflicts Def-7 on foes within 2 spaces of target through their next actions after combat. ',
+                sp: 240
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
         name: 'Spur Atk',
         description: '',
         skillLevels: [
@@ -791,6 +813,170 @@ export const fehCSkills: Skill[] = [
                 value: '3',
                 description: 'At start of turn, inflicts Def-5 on foes within 2 spaces through their next actions. ',
                 sp: 200
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Windsweep',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'If unit initiates combat, unit cannot make a follow-up attack. If unit’s Spd ≥ foe’s Spd+5 and foe uses sword, lance, axe, bow, dagger, or beast damage, foe cannot counterattack.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'If unit initiates combat, unit cannot make a follow-up attack. If unit’s Spd ≥ foe’s Spd+3 and foe uses sword, lance, axe, bow, dagger, or beast damage, foe cannot counterattack.',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'If unit initiates combat, unit cannot make a follow-up attack. If unit’s Spd > foe’s Spd and foe uses sword, lance, axe, bow, dagger, or beast damage, foe cannot counterattack.',
+                sp: 240
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
+        name: 'Threat. Atk/Spd',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'At start of turn, inflicts Atk/Spd-3 on foes within 2 spaces through their next actions.',
+                sp: 100
+            },
+            {
+                value: '2',
+                description: 'At start of turn, inflicts Atk/Spd-4 on foes within 2 spaces through their next actions.',
+                sp: 200
+            },
+            {
+                value: '3',
+                description:
+                    'At start of turn, if unit is within 2 spaces of a foe, grants Atk/Spd+5 to unit for 1 turn and inflicts Atk/Spd-5 on foes within 2 spaces through their next actions.',
+                sp: 300
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Rouse Spd/Res',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'At start of turn, if unit is not adjacent to an ally, grants Spd/Res+2 to unit for 1 turn.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description: 'At start of turn, if unit is not adjacent to an ally, grants Spd/Res+4 to unit for 1 turn. ',
+                sp: 120
+            },
+            {
+                value: '3',
+                description: 'At start of turn, if unit is not adjacent to an ally, grants Spd/Res+6 to unit for 1 turn. ',
+                sp: 240
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Odd Atk Wave',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'At start of odd-numbered turns, grants Atk+2 to unit and adjacent allies for 1 turn.\n(Bonus granted to unit even if no allies are adjacent.)',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At start of odd-numbered turns, grants Atk+4 to unit and adjacent allies for 1 turn.\n(Bonus granted to unit even if no allies are adjacent.)',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'At start of odd-numbered turns, grants Atk+6 to unit and adjacent allies for 1 turn.\n(Bonus granted to unit even if no allies are adjacent.)',
+                sp: 240
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Atk/Def Oath',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'At start of turn, if unit is adjacent to an ally, grants Atk/Def+3 to unit for 1 turn.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description: 'At start of turn, if unit is adjacent to an ally, grants Atk/Def+4 to unit for 1 turn.',
+                sp: 120
+            },
+            {
+                value: '3',
+                description: 'At start of turn, if unit is adjacent to an ally, grants Atk/Def+5 to unit for 1 turn.',
+                sp: 240
+            }
+        ],
+        restrictions: [cavalry, armor]
+    },
+    {
+        name: 'Armor March',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'At start of turn, if unit`s HP = 100% and unit is adjacent to an armored ally, unit and adjacent armored allies can move 1 extra space.\n(That turn only. Does not stack.) ',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At start of turn, if unit`s HP ≥ 100% and unit is adjacent to an armored ally, unit and adjacent armored allies can move 1 extra space.\n(That turn only. Does not stack.) ',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'At start of turn, if unit is adjacent to an armored ally, unit and adjacent armored allies can move 1 extra space.\n(That turn only. Does not stack.) ',
+                sp: 240
+            }
+        ],
+        required: [armor]
+    },
+    {
+        name: 'Atk/Spd Gap',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'At start of turn, grants Atk/Spd+1 to ally with the highest Atk+Spd total for 1 turn. (Excludes unit.)',
+                sp: 60
+            },
+            {
+                value: '2',
+                description: 'At start of turn, grants Atk/Spd+3 to ally with the highest Atk+Spd total for 1 turn. (Excludes unit.)',
+                sp: 120
+            },
+            {
+                value: '3',
+                description: 'At start of turn, grants Atk/Spd+5 to ally with the highest Atk+Spd total for 1 turn. (Excludes unit.)',
+                sp: 240
             }
         ],
         restrictions: [none]

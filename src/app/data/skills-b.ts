@@ -529,5 +529,102 @@ export const fehBSkills: Skill[] = [
             }
         ],
         restrictions: [staff]
+    },
+    {
+        name: 'Lull Atk/Spd',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'Inflicts Atk/Spd-1 on foe and neutralizes foe`s bonuses to Atk/Spd (from skills like Fortify, Rally, etc.) during combat.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'Inflicts Atk/Spd-2 on foe and neutralizes foe`s bonuses to Atk/Spd (from skills like Fortify, Rally, etc.) during combat.',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'Inflicts Atk/Spd-3 on foe and neutralizes foe`s bonuses to Atk/Spd (from skills like Fortify, Rally, etc.) during combat.',
+                sp: 240
+            }
+        ],
+        restrictions: [armor, flying]
+    },
+    {
+        name: 'Null Follow-Up',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'At start of combat, if unit`s HP = 100%, neutralizes effects that guarantee foe`s follow-up attacks and effects that prevent unit`s follow-up attacks during combat.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At start of combat, if unit`s HP ≥ 50%, neutralizes effects that guarantee foe`s follow-up attacks and effects that prevent unit`s follow-up attacks during combat.',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'Neutralizes effects that guarantee foe`s follow-up attacks and effects that prevent unit`s follow-up attacks during combat.',
+                sp: 240
+            }
+        ],
+        required: [infantry]
+    },
+    {
+        name: 'Vantage',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If unit`s HP ≤ 25% and foe initiates combat, unit can counterattack before foe`s first attack.',
+                sp: 50
+            },
+            {
+                value: '2',
+                description: 'If unit`s HP ≤ 25% and foe initiates combat, unit can counterattack before foe`s first attack.',
+                sp: 100
+            },
+            {
+                value: '3',
+                description: 'If unit`s HP ≤ 25% and foe initiates combat, unit can counterattack before foe`s first attack.',
+                sp: 200
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Sabotage Atk',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'At start of turn, if any foe`s Res ≤ unit`s Res-3 and that foe is adjacent to another foe, inflicts Atk-3 on that foe through its next action.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At start of turn, if any foe`s Res ≤ unit`s Res-3 and that foe is adjacent to another foe, inflicts Atk-3 on that foe through its next action.',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'At start of turn, if any foe`s Res ≤ unit`s Res-3 and that foe is adjacent to another foe, inflicts Atk-3 on that foe through its next action.',
+                sp: 240
+            }
+        ],
+        restrictions: [none]
     }
 ];

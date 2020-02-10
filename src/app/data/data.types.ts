@@ -1,10 +1,14 @@
 export interface Unit {
     name: string;
+    released: Date;
+    wpType: string;
+    colour: string;
+    move: string;
+    range: string;
 }
 
 export interface UnitStats {
     key: string;
-    released: Date;
     baseHp: number;
     baseAtt: number;
     baseSpd: number;
@@ -39,10 +43,6 @@ export interface UnitSkillInheritance {
 
 export interface UnitSkills {
     key: string;
-    wpType: string;
-    range: string;
-    colour: string;
-    move: string;
     wps: UnitSkillInheritance[];
     assists?: UnitSkillInheritance[];
     specials?: UnitSkillInheritance[];
@@ -72,6 +72,7 @@ export interface Skill {
 export interface Weapon extends Skill {
     mt: number;
     refinable?: boolean;
+    statIncreases?: UnitStat[];
 }
 
 export interface SkillDisplay {

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
+import { infantry } from '../data/hardcoded';
 import { StatsPanelComponent } from '../stat/stats-panel.component';
 import { assetFlaw, flowers, merges, summonerSupports } from './../data/misc.stats';
 import { fehUnits } from './../data/unit';
@@ -40,19 +41,23 @@ export class FehBuilderComponent implements OnInit {
         this.skillsPanel.setStatsPanel(this.statsPanel);
         this.statsPanel.setSkillsPanel(this.skillsPanel);
 
-        this.selectedUnit = this.units[0].name;
-        this.changedSelectedUnit(this.units[0]);
-
         this.statsPanel.asset = this.selectedAsset;
         this.statsPanel.flaw = this.selectedFlaw;
-        this.updateUnitsStats(this.selectedUnit);
-        this.updateUnitsSkills(this.selectedUnit);
+
+        this.selectedUnit = this.units[0].name;
+        this.changedSelectedUnit(this.units[0]);
+        //this.updateUnitsStats(this.selectedUnit);
+        //this.updateUnitsSkills(this.selectedUnit);
     }
 
     changedSelectedUnit($event) {
-        $event.released <= this.update320Release ? (this.flowers = flowers) : (this.flowers = flowers.slice(0, 6));
+        this.flowers = Object.assign([], flowers);
+        if ($event.move !== infantry || $event.released >= this.update320Release) {
+            this.flowers = this.flowers.slice(0, 6);
+        }
+
         this.updateUnitsStats($event.name);
-        this.updateUnitsSkills($event.name);
+        this.updateUnitsSkills($event);
     }
 
     changedMerge($event) {
@@ -87,10 +92,9 @@ export class FehBuilderComponent implements OnInit {
         this.statsPanel.applyUnitStats(foundUnitStats);
     }
 
-    updateUnitsSkills(unitKey) {
-        console.log(unitKey);
-        const foundUnitSkills = this.unitDataService.getSkillsByUnit(unitKey);
-        console.log(foundUnitSkills);
-        this.skillsPanel.applyUnitSkills(foundUnitSkills);
+    updateUnitsSkills(unit) {
+        this.selectedUnit = unit.name;
+        console.log(unit);
+        this.skillsPanel.applyUnitSkills(unit);
     }
 }

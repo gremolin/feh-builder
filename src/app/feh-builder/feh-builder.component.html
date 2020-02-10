@@ -25,9 +25,13 @@
             </div>
             <div id="unit-stats-mods" style="display: flex; justify-content: center;">
                 <div>
+                    <label>Rarity</label>
+                    <label>5*</label>
+                </div>
+                <div>
                     <label>Merges</label>
                     <ng-select
-                        class="stat-modifier"
+                        class="stat-modifier show-full-contents"
                         [items]="merges"
                         [(ngModel)]="selectedMerge"
                         [clearable]="false"
@@ -64,7 +68,7 @@
                 <div>
                     <label>Flowers</label>
                     <ng-select
-                        class="stat-modifier"
+                        class="stat-modifier show-full-contents"
                         [items]="flowers"
                         (change)="changedFlower($event)"
                         [clearable]="false"

@@ -1,5 +1,5 @@
 import { Skill } from './data.types';
-import { cavalry, closeRange, flying, none, staff } from './hardcoded';
+import { cavalry, closeRange, flying, infantry, none, staff } from './hardcoded';
 
 export const fehASkills: Skill[] = [
     { name: '-', description: '-' },
@@ -8,19 +8,19 @@ export const fehASkills: Skill[] = [
         description: '',
         skillLevels: [
             {
-                value: '3',
+                value: '1',
                 description: 'Grants HP+3.',
                 sp: 40,
                 statIncreases: [{ key: 0, value: 3 }]
             },
             {
-                value: '4',
+                value: '2',
                 description: 'Grants HP+4.',
                 sp: 80,
                 statIncreases: [{ key: 0, value: 4 }]
             },
             {
-                value: '5',
+                value: '3',
                 description: 'Grants HP+5.',
                 sp: 160,
                 statIncreases: [{ key: 0, value: 5 }]
@@ -1136,5 +1136,98 @@ export const fehASkills: Skill[] = [
             }
         ],
         restrictions: [none]
+    },
+    {
+        name: 'Death Blow',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If unit initiates combat, grants Atk+2 during combat.',
+                sp: 50
+            },
+            {
+                value: '2',
+                description: 'If unit initiates combat, grants Atk+4 during combat.',
+                sp: 100
+            },
+            {
+                value: '3',
+                description: 'If unit initiates combat, grants Atk+6 during combat.',
+                sp: 200
+            },
+            {
+                value: '4',
+                description: 'If unit initiates combat, grants Atk+8 during combat.',
+                sp: 300
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
+        name: 'Sturdy Blow',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If unit initiates combat, grants Atk/Def+2 during combat.',
+                sp: 120
+            },
+            {
+                value: '2',
+                description: 'If unit initiates combat, grants Atk/Def+4 during combat.',
+                sp: 240
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
+        name: 'Bonus Doubler',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'Grants bonus to Atk/Spd/Def/Res during combat = 50% of current bonus on each of unit`s stats. Calculates each stat bonus independently. ',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'Grants bonus to Atk/Spd/Def/Res during combat = 75% of current bonus on each of unit`s stats. Calculates each stat bonus independently. ',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'Grants bonus to Atk/Spd/Def/Res during combat = current bonus on each of unit`s stats. Calculates each stat bonus independently. ',
+                sp: 240
+            }
+        ],
+        required: [infantry]
+    },
+    {
+        name: 'Sturdy Stance',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If foe initiates combat, grants Atk/Def+2 during combat.',
+                sp: 120
+            },
+            {
+                value: '2',
+                description: 'If foe initiates combat, grants Atk/Def+4 during combat.',
+                sp: 240
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
+        name: 'Ashera`s Chosen',
+        description:
+            'Neutralizes "effective against flying" bonuses. If unit is adjacent to only beast or dragon allies or if unit is not adjacent to any ally, grants Atk/Def+6 during combat.',
+        required: ['Altina: Dawn`s Trueblade'],
+        sp: 300
     }
 ];
