@@ -1,5 +1,5 @@
 import { Skill } from './data.types';
-import { staff } from './hardcoded';
+import { distant, staff } from './hardcoded';
 
 export const fehSpecials: Skill[] = [
     { name: '-', description: '-', sp: undefined },
@@ -70,6 +70,13 @@ export const fehSpecials: Skill[] = [
         name: 'Dragon Gaze',
         description: 'Boosts damage by 30% of unit`s Atk.',
         sp: 100,
+        restrictions: [staff],
+        misc: 4
+    },
+    {
+        name: 'Dragon Fang',
+        description: 'Boosts damage by 50% of unit`s Atk.',
+        sp: 200,
         restrictions: [staff],
         misc: 4
     },
@@ -149,5 +156,56 @@ export const fehSpecials: Skill[] = [
         sp: 200,
         restrictions: [staff],
         misc: 4
+    },
+    {
+        name: 'Buckler',
+        description: 'Reduces damage from an adjacent foe`s attack by 30%.',
+        sp: 100,
+        restrictions: [distant],
+        misc: 3
+    },
+    {
+        name: 'Pavise',
+        description: 'Reduces damage from an adjacent foe`s attack by 50%.',
+        sp: 200,
+        restrictions: [distant],
+        misc: 3
+    },
+    {
+        name: 'Rising Flame',
+        description:
+            'Before combat this unit initiates, foes in an area near target take damage equal to (unit`s Atk minus foe`s Def or Res). ',
+        sp: 150,
+        restrictions: [staff],
+        misc: 4
+    },
+    {
+        name: 'Growing Flame',
+        description:
+            'Before combat this unit initiates, foes in a wide area around target take damage equal to (unit`s Atk minus foe`s Def or Res).',
+        sp: 300,
+        restrictions: [staff],
+        misc: 4
+    },
+    {
+        name: 'Regnal Astra',
+        description: 'Boosts damage by 40% of unit`s Spd.\n(Skill cannot be inherited.)',
+        sp: 500,
+        required: ['Ayra: Astra`s Wielder'],
+        misc: 2
+    },
+    {
+        name: 'Imbue',
+        description: 'When healing an ally with a staff, restores an additional 10 HP to target ally.',
+        sp: 50,
+        required: [staff],
+        misc: 1
+    },
+    {
+        name: 'Solid-Earth Balm',
+        description: 'When healing an ally with a staff, grants Def+4 to all allies for 1 turn.',
+        sp: 150,
+        required: [staff],
+        misc: 1
     }
 ];

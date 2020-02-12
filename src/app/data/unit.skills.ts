@@ -331,8 +331,8 @@ export const unitSkills: UnitSkills[] = [
     {
         key: 'Anna: Wealth-Wisher',
         wps: [
-            { key: 'Iron Axe', level: 1 },
-            { key: 'Steel Axe', level: 2 },
+            { key: 'Iron Bow', level: 1 },
+            { key: 'Steel Bow', level: 2 },
             { key: 'Fortune Bow', level: 3 },
             { key: 'Fortune Bow+', level: 5 }
         ],
@@ -354,6 +354,336 @@ export const unitSkills: UnitSkills[] = [
             { key: 'Atk/Spd Gap', subKey: '1', level: 3 },
             { key: 'Atk/Spd Gap', subKey: '2', level: 4 },
             { key: 'Atk/Spd Gap', subKey: '3', level: 5 }
+        ]
+    },
+    {
+        key: 'Arthur: Hapless Hero',
+        wps: [
+            { key: 'Iron Axe', level: 1 },
+            { key: 'Steel Axe', level: 2 },
+            { key: 'Emerald Axe', level: 3 },
+            { key: 'Emerald Axe+', level: 5 },
+            { key: 'Arthur`s Axe', level: 5 }
+        ],
+        assists: [{ key: 'Swap', level: 3 }],
+        aSkills: [
+            { key: 'HP', subKey: '1', level: 1 },
+            { key: 'HP', subKey: '2', level: 2 },
+            { key: 'HP', subKey: '3', level: 4 }
+        ],
+        bSkills: [
+            { key: 'Lancebreaker', subKey: '1', level: 3 },
+            { key: 'Lancebreaker', subKey: '2', level: 4 },
+            { key: 'Lancebreaker', subKey: '3', level: 5 }
+        ]
+    },
+    {
+        key: 'Arden: Strong and Tough',
+        wps: [
+            { key: 'Iron Sword', level: 1 },
+            { key: 'Steel Sword', level: 2 },
+            { key: 'Brave Sword', level: 3 },
+            { key: 'Brave Sword+', level: 5 }
+        ],
+        specials: [
+            { key: 'Buckler', level: 3 },
+            { key: 'Pavise', level: 4 }
+        ],
+        bSkills: [{ key: 'Follow-Up Ring', subKey: '1', level: 5 }],
+        cSkills: [
+            { key: 'Spur Def', subKey: '1', level: 1 },
+            { key: 'Drive Def', subKey: '2', level: 2 },
+            { key: 'Drive Def', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Ares: Black Knight',
+        wps: [
+            { key: 'Iron Sword', level: 1 },
+            { key: 'Steel Sword', level: 2 },
+            { key: 'Slaying Edge', level: 3 },
+            { key: 'Dark Mystletainn', level: 5 }
+        ],
+        specials: [
+            { key: 'Dragon Gaze', level: 3 },
+            { key: 'Draconic Aura', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Brazen Atk/Def', subKey: '1', level: 1 },
+            { key: 'Brazen Atk/Def', subKey: '2', level: 2 },
+            { key: 'Brazen Atk/Def', subKey: '3', level: 4 }
+        ],
+        bSkills: [
+            { key: 'Seal Def', subKey: '1', level: 1 },
+            { key: 'Seal Def/Res', subKey: '2', level: 2 },
+            { key: 'Seal Def/Res', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Arvis: Emperor of Flame',
+        wps: [
+            { key: 'Fire', level: 1 },
+            { key: 'Elfire', level: 2 },
+            { key: 'Bolganone', level: 3 },
+            { key: 'Valflame', level: 5 }
+        ],
+        specials: [
+            { key: 'Rising Flame', level: 3 },
+            { key: 'Growing Flame', level: 4 }
+        ],
+        bSkills: [{ key: 'Recover Ring', subKey: '1', level: 5 }],
+        cSkills: [
+            { key: 'Def Ploy', subKey: '1', level: 1 },
+            { key: 'Def Ploy', subKey: '2', level: 2 },
+            { key: 'Def Ploy', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Astram: Midia`s Hero',
+        wps: [
+            { key: 'Iron Sword', level: 1 },
+            { key: 'Steel Sword', level: 2 },
+            { key: 'Slaying Edge', level: 3 },
+            { key: 'Mercurius', level: 5 }
+        ],
+        specials: [
+            { key: 'Glowing Ember', level: 3 },
+            { key: 'Bonfire', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Wind Boost', subKey: '1', level: 1 },
+            { key: 'Wind Boost', subKey: '2', level: 2 },
+            { key: 'Wind Boost', subKey: '3', level: 4 }
+        ],
+        bSkills: [
+            { key: 'Wrath', subKey: '1', level: 3 },
+            { key: 'Wrath', subKey: '2', level: 4 },
+            { key: 'Wrath', subKey: '3', level: 5 }
+        ]
+    },
+    {
+        key: 'Athena: Borderland Sword',
+        wps: [
+            { key: 'Iron Sword', level: 1 },
+            { key: 'Steel Sword', level: 2 },
+            { key: 'Wo Dao', level: 4 },
+            { key: 'Wo Dao+', level: 5 },
+            { key: 'Concealed Blade', level: 5 }
+        ],
+        specials: [
+            { key: 'New Moon', level: 3 },
+            { key: 'Moonbow', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Armored Blow', subKey: '1', level: 3 },
+            { key: 'Sturdy Blow', subKey: '1', level: 4 },
+            { key: 'Sturdy Blow', subKey: '2', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Sword Exp.', subKey: '1', level: 1 },
+            { key: 'Sword Exp.', subKey: '2', level: 2 },
+            { key: 'Sword Exp.', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Aversa: Dark One',
+        wps: [
+            { key: 'Flux', level: 1 },
+            { key: 'Ruin', level: 2 },
+            { key: 'Fenrir', level: 4 },
+            { key: 'Aversa`s Night', level: 5 }
+        ],
+        specials: [
+            { key: 'Dragon Gaze', level: 3 },
+            { key: 'Dragon Fang', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Speed', subKey: '1', level: 3 },
+            { key: 'HP / Spd', subKey: '1', level: 4 },
+            { key: 'HP / Spd', subKey: '2', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Odd Res Wave', subKey: '1', level: 1 },
+            { key: 'Odd Res Wave', subKey: '2', level: 2 },
+            { key: 'Odd Res Wave', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Ayra: Astra`s Wielder',
+        wps: [
+            { key: 'Iron Sword', level: 1 },
+            { key: 'Steel Sword', level: 2 },
+            { key: 'Silver Sword', level: 3 },
+            { key: 'Ayra`s Blade', level: 5 }
+        ],
+        specials: [
+            { key: 'Night Sky', level: 3 },
+            { key: 'Astra', level: 4 },
+            { key: 'Regnal Astra', level: 5 }
+        ],
+        aSkills: [
+            { key: 'Darting Blow', subKey: '1', level: 3 },
+            { key: 'Swift Sparrow', subKey: '1', level: 4 },
+            { key: 'Swift Sparrow', subKey: '2', level: 5 }
+        ],
+        bSkills: [
+            { key: 'Desperation', subKey: '1', level: 1 },
+            { key: 'Desperation', subKey: '2', level: 2 },
+            { key: 'Desperation', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Azama: Carefree Monk',
+        wps: [
+            { key: 'Assault', level: 1 },
+            { key: 'Pain', level: 3 },
+            { key: 'Pain+', level: 5 }
+        ],
+        assists: [
+            { key: 'Heal', level: 1 },
+            { key: 'Reconcile', level: 2 },
+            { key: 'Martyr', level: 4 },
+            { key: 'Martyr+', level: 5 }
+        ],
+        specials: [
+            { key: 'Imbue', level: 2 },
+            { key: 'Solid-Earth Balm', level: 3 }
+        ],
+        cSkills: [
+            { key: 'Threaten Atk', subKey: '1', level: 3 },
+            { key: 'Threaten Atk', subKey: '2', level: 4 },
+            { key: 'Threaten Atk', subKey: '3', level: 5 }
+        ]
+    },
+    {
+        key: 'Azura: Celebratory Spirit',
+        wps: [
+            { key: 'Iron Axe', level: 1 },
+            { key: 'Steel Axe', level: 2 },
+            { key: 'Hagoita', level: 3 },
+            { key: 'Hagoita+', level: 5 }
+        ],
+        assists: [{ key: 'Sing', level: 3 }],
+        bSkills: [
+            { key: 'Earth Dance', subKey: '1', level: 3 },
+            { key: 'Earth Dance', subKey: '2', level: 4 },
+            { key: 'Earth Dance', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Hone Spd', subKey: '1', level: 1 },
+            { key: 'Hone Spd', subKey: '2', level: 2 },
+            { key: 'Hone Fliers', subKey: '1', level: 4 }
+        ]
+    },
+    {
+        key: 'Azura: Lady of Ballads',
+        wps: [
+            { key: 'Iron Axe', level: 1 },
+            { key: 'Steel Axe', level: 2 },
+            { key: 'Silver Axe', level: 3 },
+            { key: 'Urðr', level: 5 }
+        ],
+        assists: [{ key: 'Sing', level: 3 }],
+        aSkills: [
+            { key: 'Triangle Adept', subKey: '1', level: 1 },
+            { key: 'Triangle Adept', subKey: '2', level: 2 },
+            { key: 'Triangle Adept', subKey: '3', level: 4 }
+        ],
+        cSkills: [
+            { key: 'Spur Res', subKey: '1', level: 3 },
+            { key: 'Drive Res', subKey: '1', level: 4 },
+            { key: 'Drive Res', subKey: '2', level: 5 }
+        ]
+    },
+    {
+        key: 'Azura: Lady of the Lake',
+        wps: [
+            { key: 'Iron Lance', level: 1 },
+            { key: 'Steel Lance', level: 2 },
+            { key: 'Sapphire Lance', level: 3 },
+            { key: 'Sapphire Lance+', level: 5 }
+        ],
+        assists: [{ key: 'Sing', level: 3 }],
+        aSkills: [
+            { key: 'Speed', subKey: '1', level: 3 },
+            { key: 'Speed', subKey: '2', level: 4 },
+            { key: 'Speed', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Fortify Res', subKey: '1', level: 1 },
+            { key: 'Fortify Res', subKey: '2', level: 2 },
+            { key: 'Fortify Res', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Azura: Vallite Songstress',
+        wps: [
+            { key: 'Light', level: 1 },
+            { key: 'Ellight', level: 2 },
+            { key: 'Shine', level: 3 },
+            { key: 'Prayer Wheel', level: 5 }
+        ],
+        assists: [
+            { key: 'Sing', level: 3 },
+            { key: 'Gray Waves', level: 5 }
+        ],
+
+        aSkills: [
+            { key: 'B Duel Flying', subKey: '1', level: 3 },
+            { key: 'B Duel Flying', subKey: '2', level: 4 },
+            { key: 'B Duel Flying', subKey: '3', level: 5 }
+        ],
+        bSkills: [
+            { key: 'Aerobatics', subKey: '1', level: 3 },
+            { key: 'Aerobatics', subKey: '2', level: 4 },
+            { key: 'Aerobatics', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Atk Tactic', subKey: '1', level: 1 },
+            { key: 'Atk Tactic', subKey: '2', level: 2 },
+            { key: 'Atk Tactic', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Azura: Young Songstress',
+        wps: [
+            { key: 'Wind', level: 1 },
+            { key: 'Elwind', level: 2 },
+            { key: 'Rexcalibur', level: 3 },
+            { key: 'Book of Shadows', level: 5 }
+        ],
+        aSkills: [
+            { key: 'Spd / Res Bond', subKey: '1', level: 1 },
+            { key: 'Spd / Res Bond', subKey: '2', level: 2 },
+            { key: 'Spd / Res Bond', subKey: '3', level: 4 }
+        ],
+        bSkills: [
+            { key: 'Torrent Dance', subKey: '1', level: 3 },
+            { key: 'Torrent Dance', subKey: '2', level: 4 },
+            { key: 'Torrent Dance', subKey: '3', level: 5 }
+        ]
+    },
+    {
+        key: 'Bantu: Tiki`s Guardian',
+        wps: [
+            { key: 'Fire Breath', level: 1 },
+            { key: 'Fire Breath+', level: 2 },
+            { key: 'Dark Breath', level: 3 },
+            { key: 'Dark Breath+', level: 5 }
+        ],
+        specials: [
+            { key: 'Dragon Gaze', level: 3 },
+            { key: 'Dragon Fang', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Fierce Stance', subKey: '1', level: 1 },
+            { key: 'Fierce Stance', subKey: '2', level: 2 },
+            { key: 'Fierce Stance', subKey: '3', level: 4 }
+        ],
+        cSkills: [
+            { key: 'Savage Blow', subKey: '1', level: 3 },
+            { key: 'Savage Blow', subKey: '2', level: 4 },
+            { key: 'Savage Blow', subKey: '3', level: 5 }
         ]
     }
     /*,

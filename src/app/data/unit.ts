@@ -1,5 +1,5 @@
 import { Unit } from './data.types';
-import { armor, axe, blue, blueTome, bow, cavalry, closeRange, colourless, distant, flying, green, infantry, lance, red, sword } from './hardcoded';
+import { armor, axe, blue, blueTome, bow, breath, cavalry, closeRange, colourless, distant, flying, green, greenTome, infantry, lance, red, redTome, staff, sword } from './hardcoded';
 
 export const fehUnits: Unit[] = [
     { name: 'Abel: The Panther', released: new Date(2017, 1, 2), move: cavalry, wpType: lance, range: closeRange, colour: blue },
@@ -14,5 +14,20 @@ export const fehUnits: Unit[] = [
     { name: 'Altina: Dawn`s Trueblade', released: new Date(2019, 10, 28), wpType: sword, colour: red, move: flying, range: closeRange },
     { name: 'Amelia: Rose of the War', released: new Date(2017, 7, 15), wpType: axe, colour: green, move: armor, range: closeRange },
     { name: 'Anna: Commander', released: new Date(2017, 1, 2), wpType: axe, colour: green, move: infantry, range: closeRange },
-    { name: 'Anna: Wealth-Wisher', released: new Date(2020, 0, 1), wpType: bow, colour: red, move: infantry, range: distant }
+    { name: 'Anna: Wealth-Wisher', released: new Date(2020, 0, 1), wpType: bow, colour: red, move: infantry, range: distant },
+    { name: 'Arden: Strong and Tough', released: new Date(2017, 9, 23), wpType: sword, colour: red, move: armor, range: closeRange },
+    { name: 'Ares: Black Knight', released: new Date(2018, 4, 10), wpType: sword, colour: red, move: cavalry, range: closeRange },
+    { name: 'Arthur: Hapless Hero', released: new Date(2017, 1, 2), wpType: axe, colour: green, move: infantry, range: closeRange },
+    { name: 'Arvis: Emperor of Flame', released: new Date(2017, 9, 18), wpType: redTome, colour: red, move: infantry, range: distant },
+    { name: 'Astram: Midia`s Hero', released: new Date(2019, 8, 23), wpType: sword, colour: red, move: infantry, range: closeRange },
+    { name: 'Athena: Borderland Sword', released: new Date(2017, 5, 14), wpType: sword, colour: red, move: infantry, range: closeRange },
+    { name: 'Aversa: Dark One', released: new Date(2018, 9, 25), wpType: redTome, colour: red, move: flying, range: distant },
+    { name: 'Ayra: Astra`s Wielder', released: new Date(2017, 9, 19), wpType: sword, colour: red, move: infantry, range: closeRange },
+    { name: 'Azama: Carefree Monk', released: new Date(2017, 1, 2), wpType: staff, colour: colourless, move: infantry, range: distant },
+    { name: 'Azura: Celebratory Spirit', released: new Date(2017, 11, 31), wpType: axe, colour: green, move: flying, range: closeRange },
+    { name: 'Azura: Lady of Ballads', released: new Date(2017, 8, 29), wpType: axe, colour: green, move: infantry, range: closeRange },
+    { name: 'Azura: Lady of the Lake', released: new Date(2017, 1, 2), wpType: lance, colour: blue, move: infantry, range: closeRange },
+    { name: 'Azura: Vallite Songstress', released: new Date(2018, 11, 28), wpType: blueTome, colour: blue, move: flying, range: distant },
+    { name: 'Azura: Young Songstress', released: new Date(2018, 10, 12), wpType: greenTome, colour: green, move: infantry, range: distant },
+    { name: 'Bantu: Tiki`s Guardian', released: new Date(2019, 8, 19), wpType: breath, colour: red, move: infantry, range: closeRange }
 ];

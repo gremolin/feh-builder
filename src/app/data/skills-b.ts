@@ -1,5 +1,5 @@
 import { Skill } from './data.types';
-import { armor, cavalry, flying, green, infantry, none, staff } from './hardcoded';
+import { armor, cavalry, distant, flying, green, infantry, none, red, staff } from './hardcoded';
 
 export const fehBSkills: Skill[] = [
     { name: '-', description: '-' },
@@ -623,6 +623,107 @@ export const fehBSkills: Skill[] = [
                 description:
                     'At start of turn, if any foe`s Res ≤ unit`s Res-3 and that foe is adjacent to another foe, inflicts Atk-3 on that foe through its next action.',
                 sp: 240
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Lancebreaker',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'If unit`s HP ≥ 90% in combat against a lance foe, unit makes a guaranteed follow-up attack and foe cannot make a follow-up attack.',
+                sp: 50
+            },
+            {
+                value: '2',
+                description:
+                    'If unit`s HP ≥ 70% in combat against a lance foe, unit makes a guaranteed follow-up attack and foe cannot make a follow-up attack.',
+                sp: 100
+            },
+            {
+                value: '3',
+                description:
+                    'If unit`s HP ≥ 50% in combat against a lance foe, unit makes a guaranteed follow-up attack and foe cannot make a follow-up attack.',
+                sp: 200
+            }
+        ],
+        restrictions: [red]
+    },
+    {
+        name: 'Follow-Up Ring',
+        description: 'At start of combat, if unit`s HP ≥ 50%, unit makes a guaranteed follow-up attack.\n(Skill cannot be inherited.)',
+        required: ['Arden: Strong and Tough'],
+        sp: 300
+    },
+    {
+        name: 'Seal Def/Res',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Inflicts Def/Res-3 on foe through its next action after combat. ',
+                sp: 40
+            },
+            {
+                value: '2',
+                description: 'Inflicts Def/Res-5 on foe through its next action after combat. ',
+                sp: 80
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
+        name: 'Recover Ring',
+        description: 'At start of turn, restores 10 HP.\n(Skill cannot be inherited.)',
+        required: ['Arvis: Emperor of Flame'],
+        sp: 200
+    },
+    {
+        name: 'Wrath',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'At start of turn, if unit`s HP ≤ 25% and unit`s attack triggers Special, grants Special cooldown count-1, and deals +10 damage when Special triggers.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At start of turn, if unit`s HP ≤ 50% and unit`s attack triggers Special, grants Special cooldown count-1, and deals +10 damage when Special triggers.',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'At start of turn, if unit`s HP ≤ 75% and unit`s attack triggers Special, grants Special cooldown count-1, and deals +10 damage when Special triggers.',
+                sp: 240
+            }
+        ],
+        restrictions: [staff, distant, cavalry, flying]
+    },
+    {
+        name: 'Desperation',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If unit`s HP ≤ 25% and unit initiates combat, unit can make a follow-up attack before foe can counterattack.',
+                sp: 50
+            },
+            {
+                value: '2',
+                description: 'If unit`s HP ≤ 25% and unit initiates combat, unit can make a follow-up attack before foe can counterattack.',
+                sp: 100
+            },
+            {
+                value: '3',
+                description: 'If unit`s HP ≤ 25% and unit initiates combat, unit can make a follow-up attack before foe can counterattack.',
+                sp: 200
             }
         ],
         restrictions: [none]

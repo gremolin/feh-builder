@@ -118,7 +118,7 @@ export class UnitDataService {
 
     getUnitsByASkill(aSkill: Skill, aSub: string): any[] {
         if (aSkill) {
-            const key = aSub ? aSkill.name + aSub : aSkill;
+            const key = aSub ? aSkill.name + aSub : aSkill.name;
             return this.unitsByASkill.get(key);
         }
         return undefined;
@@ -126,7 +126,7 @@ export class UnitDataService {
 
     getUnitsByBSkill(bSkill: Skill, bSub: string): any[] {
         if (bSkill) {
-            const key = bSub ? bSkill.name + bSub : bSkill;
+            const key = bSub ? bSkill.name + bSub : bSkill.name;
             return this.unitsByBSkill.get(key);
         }
         return undefined;
@@ -134,7 +134,7 @@ export class UnitDataService {
 
     getUnitsByCSkill(cSkill: Skill, cSub: string): any[] {
         if (cSkill) {
-            const key = cSub ? cSkill.name + cSub : cSkill;
+            const key = cSub ? cSkill.name + cSub : cSkill.name;
             return this.unitsByCSkill.get(key);
         }
         return undefined;

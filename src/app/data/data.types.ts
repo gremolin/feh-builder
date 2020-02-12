@@ -57,6 +57,7 @@ export interface SkillLevel {
     description: string;
     sp: number;
     statIncreases?: UnitStat[];
+    restrictions?: string[];
 }
 
 export interface Skill {
@@ -73,6 +74,7 @@ export interface Weapon extends Skill {
     mt: number;
     refinable?: boolean;
     statIncreases?: UnitStat[];
+    attRefine?: boolean;
 }
 
 export interface SkillDisplay {

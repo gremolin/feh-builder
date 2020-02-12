@@ -1,5 +1,5 @@
 import { Skill } from './data.types';
-import { armor, cavalry, infantry, none, staff } from './hardcoded';
+import { armor, cavalry, flying, infantry, none, staff, sword } from './hardcoded';
 
 export const fehCSkills: Skill[] = [
     { name: '-', description: '-', sp: undefined },
@@ -913,6 +913,31 @@ export const fehCSkills: Skill[] = [
         restrictions: [none]
     },
     {
+        name: 'Odd Res Wave',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'At start of odd-numbered turns, grants Res+2 to unit and adjacent allies for 1 turn.\n(Bonus granted to unit even if no allies are adjacent.)',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At start of odd-numbered turns, grants Res+4 to unit and adjacent allies for 1 turn.\n(Bonus granted to unit even if no allies are adjacent.)',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'At start of odd-numbered turns, grants Res+6 to unit and adjacent allies for 1 turn.\n(Bonus granted to unit even if no allies are adjacent.)',
+                sp: 240
+            }
+        ],
+        restrictions: [none]
+    },
+    {
         name: 'Atk/Def Oath',
         description: '',
         skillLevels: [
@@ -980,5 +1005,33 @@ export const fehCSkills: Skill[] = [
             }
         ],
         restrictions: [none]
+    },
+    {
+        name: 'Sword Exp.',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'While unit lives and uses a sword, unit gets 1.5x EXP.\n(Only highest value applied. Does not stack.)',
+                sp: 30
+            },
+            {
+                value: '2',
+                description: 'While unit lives, all sword allies on team get 1.5x EXP.\n(Only highest value applied. Does not stack.)',
+                sp: 60
+            },
+            {
+                value: '3',
+                description: 'While unit lives, all sword allies on team get 2x EXP.\n(Only highest value applied. Does not stack.)',
+                sp: 120
+            }
+        ],
+        required: [sword]
+    },
+    {
+        name: 'Hone Fliers',
+        description: 'At start of turn, grants Atk/Spd+6 to adjacent flying allies for 1 turn. ',
+        required: [flying],
+        sp: 200
     }
 ];

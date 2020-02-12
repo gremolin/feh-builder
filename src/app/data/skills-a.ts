@@ -1,5 +1,5 @@
 import { Skill } from './data.types';
-import { cavalry, closeRange, flying, infantry, none, staff } from './hardcoded';
+import { blue, cavalry, closeRange, colourless, flying, infantry, none, staff } from './hardcoded';
 
 export const fehASkills: Skill[] = [
     { name: '-', description: '-' },
@@ -999,7 +999,8 @@ export const fehASkills: Skill[] = [
                 value: '4',
                 description:
                     'If foe initiates combat, grants Def+8 during combat and inflicts Special cooldown charge -1 on foe per attack. (Only highest value applied. Does not stack.)',
-                sp: 300
+                sp: 300,
+                restrictions: [staff]
             }
         ],
         restrictions: [none]
@@ -1229,5 +1230,58 @@ export const fehASkills: Skill[] = [
             'Neutralizes "effective against flying" bonuses. If unit is adjacent to only beast or dragon allies or if unit is not adjacent to any ally, grants Atk/Def+6 during combat.',
         required: ['Altina: Dawn`s Trueblade'],
         sp: 300
+    },
+    {
+        name: 'Triangle Adept',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'If unit has weapon-triangle advantage, boosts Atk by 10%.\nIf unit has weapon-triangle disadvantage, reduces Atk by 10%.',
+                sp: 50
+            },
+            {
+                value: '2',
+                description:
+                    'If unit has weapon-triangle advantage, boosts Atk by 15%.\nIf unit has weapon-triangle disadvantage, reduces Atk by 10%.',
+                sp: 100
+            },
+            {
+                value: '3',
+                description:
+                    'If unit has weapon-triangle advantage, boosts Atk by 20%.\nIf unit has weapon-triangle disadvantage, reduces Atk by 10%.',
+                sp: 200
+            }
+        ],
+        restrictions: [staff, colourless]
+    },
+    {
+        name: 'B Duel Flying',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'Grants HP+3. If unit is 5★ and level 40 and unit`s stats total less than 160, treats unit`s stats as 160 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 70,
+                statIncreases: [{ key: 0, value: 3 }]
+            },
+            {
+                value: '2',
+                description:
+                    'Grants HP+4. If unit is 5★ and level 40 and unit`s stats total less than 165, treats unit`s stats as 165 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 150,
+                statIncreases: [{ key: 0, value: 4 }]
+            },
+            {
+                value: '3',
+                description:
+                    'Grants HP+5. If unit is 5★ and level 40 and unit`s stats total less than 170, treats unit`s stats as 170 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 300,
+                statIncreases: [{ key: 0, value: 5 }]
+            }
+        ],
+        required: [blue, flying]
     }
 ];

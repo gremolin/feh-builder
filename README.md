@@ -8,8 +8,7 @@ sp total,
 
 ## Bugs
 
-Steady Stance 1,2,3 has no restrictions, but Steady Stance should not be equipped by staff users.
-Same issue will affect Falchion refines.
+Falchion refines restrictions need a think, all refines available to each user currently.
 
 ## OTHERS
 
