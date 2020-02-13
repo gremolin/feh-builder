@@ -269,6 +269,8 @@ export class SkillsPanelComponent {
             this.unitDataService.getUnitsByASkill(this.selectedASkill, this.aSubSkill),
             this.selectedASub
         );
+        console.log('this.selectedBSkill', this.selectedBSkill);
+        console.log('this.bSubSkill', this.bSubSkill);
         this.updateSkill(
             this.selectedBSkill,
             this.bSkill,

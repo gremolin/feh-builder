@@ -188,6 +188,14 @@ export const fehSpecials: Skill[] = [
         misc: 4
     },
     {
+        name: 'Blazing Flame',
+        description:
+            'Before combat this unit initiates, foes in an area near target take damage equal to 1.5 x (unit`s Atk minus foe`s Def or Res).',
+        sp: 300,
+        restrictions: [staff],
+        misc: 4
+    },
+    {
         name: 'Regnal Astra',
         description: 'Boosts damage by 40% of unit`s Spd.\n(Skill cannot be inherited.)',
         sp: 500,
@@ -207,5 +215,19 @@ export const fehSpecials: Skill[] = [
         sp: 150,
         required: [staff],
         misc: 1
+    },
+    {
+        name: 'Black Luna',
+        description: 'Treats foe`s Def/Res as if reduced by 80% during combat.\n(Skill cannot be inherited.) ',
+        sp: 500,
+        required: ['Zelgius: Jet-Black General', 'Black Knight: Sinister General'],
+        misc: 3
+    },
+    {
+        name: 'Luna',
+        description: 'Treats foe`s Def/Res as if reduced by 50% during combat.',
+        sp: 500,
+        restrictions: [staff],
+        misc: 3
     }
 ];

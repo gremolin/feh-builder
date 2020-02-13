@@ -8,7 +8,7 @@ sp total,
 
 ## Bugs
 
-Falchion refines restrictions need a think, all refines available to each user currently.
+Falchion refines restrictions, all refines available to each user currently.
 
 ## OTHERS
 

@@ -448,5 +448,102 @@ export const fehWeapons: Weapon[] = [
         required: [breath],
         refinable: true,
         attRefine: true
+    },
+    {
+        name: 'Devil Axe', // TODO
+        mt: 0,
+        description: '',
+        sp: 200,
+        required: ['Barst: The Hatchet'],
+        refinable: true
+    },
+    {
+        name: 'Hammer',
+        mt: 8,
+        description: 'Effective against armored foes.',
+        sp: 300,
+        required: [axe]
+    },
+    {
+        name: 'Hammer+',
+        mt: 12,
+        description: 'Effective against armored foes.',
+        sp: 0,
+        required: [axe]
+    },
+    {
+        name: 'Axe of Virility',
+        mt: 16,
+        description: 'Effective against armored foes.',
+        sp: 300,
+        required: [axe],
+        refinable: true,
+        skillLevels: [
+            {
+                value: 'Perf',
+                description: 'Grants Atk/Spd/Def/Res+3. After combat, deals 6 damage to unit.',
+                sp: 400,
+                statIncreases: [
+                    { key: 0, value: 3 },
+                    { key: 1, value: 3 },
+                    { key: 2, value: 3 },
+                    { key: 4, value: 3 }
+                ]
+            }
+        ]
+    },
+    {
+        name: 'Verðandi',
+        mt: 12,
+        description: 'If Sing or Dance is used, grants Atk/Spd/Def/Res+4 to target.',
+        sp: 400,
+        required: ['Berkut: Debonair Noble']
+    },
+    {
+        name: 'Berkut`s Lance',
+        mt: 10,
+        description: 'If foe initiates combat, grants Res+4 during combat.',
+        sp: 200,
+        required: [lance]
+    },
+    {
+        name: 'Berkut`s Lance+',
+        mt: 14,
+        description: 'If foe initiates combat, grants Res+4 during combat.',
+        sp: 300,
+        required: [lance],
+        refinable: true
+    },
+    {
+        name: 'Kriemhild',
+        mt: 16,
+        description:
+            'If a bow, dagger, magic, or staff foe initiates combat and unit is within 2 spaces of an ally, unit can counterattack regardless of foe`s range and foe cannot make a follow-up attack, but after combat, if unit attacked, deals 20 damage to nearest ally.',
+        sp: 400,
+        required: ['Berkut: Purgatorial Prince']
+    },
+    {
+        name: 'Beruka`s Axe',
+        mt: 16,
+        description: 'Accelerates Special trigger (cooldown count-1).',
+        sp: 400,
+        required: ['Beruka: Quiet Assassin'],
+        refinable: true,
+        skillLevels: [
+            {
+                value: 'Perf',
+                description:
+                    'At start of combat, if unit`s HP ≥ 50%, inflicts Atk-4 on foe during combat and Special cooldown charge -1 on foe per attack. (Only highest value applied. Does not stack.)',
+                sp: 400,
+                statIncreases: [{ key: 0, value: 3 }]
+            }
+        ]
+    },
+    {
+        name: 'Alondite',
+        mt: 16,
+        description: 'Unit can counterattack regardless of foe`s range.',
+        sp: 400,
+        required: ['Zelgius: Jet-Black General', 'Black Knight: Sinister General']
     }
 ];

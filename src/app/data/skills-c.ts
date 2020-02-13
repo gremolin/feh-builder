@@ -1033,5 +1033,11 @@ export const fehCSkills: Skill[] = [
         description: 'At start of turn, grants Atk/Spd+6 to adjacent flying allies for 1 turn. ',
         required: [flying],
         sp: 200
+    },
+    {
+        name: 'Ward Cavalry',
+        description: 'Grants Def/Res+4 to cavalry allies within 2 spaces during combat.',
+        required: [cavalry],
+        sp: 200
     }
 ];

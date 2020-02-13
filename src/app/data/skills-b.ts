@@ -727,5 +727,39 @@ export const fehBSkills: Skill[] = [
             }
         ],
         restrictions: [none]
+    },
+    {
+        name: 'Knock Back',
+        description: 'If unit initiates combat, target foe moves 1 space away after combat.',
+        sp: 150,
+        restrictions: [staff, distant]
+    },
+    {
+        name: 'Lunge',
+        description: 'If unit initiates combat, unit and target foe swap spaces after combat.',
+        sp: 150,
+        restrictions: [staff, distant]
+    },
+    {
+        name: 'Wings of Mercy',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If an ally`s HP ≤ 30%, unit can move to a space adjacent to that ally.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description: 'If an ally`s HP ≤ 40%, unit can move to a space adjacent to that ally.',
+                sp: 120
+            },
+            {
+                value: '3',
+                description: 'If an ally`s HP ≤ 50%, unit can move to a space adjacent to that ally.',
+                sp: 240
+            }
+        ],
+        restrictions: [none]
     }
 ];

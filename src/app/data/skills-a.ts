@@ -1,5 +1,5 @@
 import { Skill } from './data.types';
-import { blue, cavalry, closeRange, colourless, flying, infantry, none, staff } from './hardcoded';
+import { blue, cavalry, closeRange, colourless, flying, green, infantry, none, red, staff } from './hardcoded';
 
 export const fehASkills: Skill[] = [
     { name: '-', description: '-' },
@@ -1283,5 +1283,172 @@ export const fehASkills: Skill[] = [
             }
         ],
         required: [blue, flying]
+    },
+    {
+        name: 'Fury',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Grants Atk/Spd/Def/Res+1.\nAfter combat, deals 2 damage to unit.',
+                sp: 50
+            },
+            {
+                value: '2',
+                description: 'Grants Atk/Spd/Def/Res+2.\nAfter combat, deals 4 damage to unit.',
+                sp: 100
+            },
+            {
+                value: '3',
+                description: 'Grants Atk/Spd/Def/Res+3.\nAfter combat, deals 6 damage to unit.',
+                sp: 200
+            },
+            {
+                value: '4',
+                description: 'Grants Atk/Spd/Def/Res+4.\nAfter combat, deals 8 damage to unit.',
+                sp: 300
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
+        name: 'B Duel Infantry',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'Grants HP+3. If unit is 5★ and level 40 and unit`s stats total less than 160, treats unit`s stats as 160 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 70,
+                statIncreases: [{ key: 0, value: 3 }]
+            },
+            {
+                value: '2',
+                description:
+                    'Grants HP+4. If unit is 5★ and level 40 and unit`s stats total less than 165, treats unit`s stats as 165 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 150,
+                statIncreases: [{ key: 0, value: 4 }]
+            },
+            {
+                value: '3',
+                description:
+                    'Grants HP+5. If unit is 5★ and level 40 and unit`s stats total less than 170, treats unit`s stats as 170 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 300,
+                statIncreases: [{ key: 0, value: 5 }]
+            }
+        ],
+        required: [blue, infantry]
+    },
+    {
+        name: 'R Duel Infantry',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'Grants HP+3. If unit is 5★ and level 40 and unit`s stats total less than 160, treats unit`s stats as 160 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 70,
+                statIncreases: [{ key: 0, value: 3 }]
+            },
+            {
+                value: '2',
+                description:
+                    'Grants HP+4. If unit is 5★ and level 40 and unit`s stats total less than 165, treats unit`s stats as 165 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 150,
+                statIncreases: [{ key: 0, value: 4 }]
+            },
+            {
+                value: '3',
+                description:
+                    'Grants HP+5. If unit is 5★ and level 40 and unit`s stats total less than 170, treats unit`s stats as 170 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 300,
+                statIncreases: [{ key: 0, value: 5 }]
+            }
+        ],
+        required: [red, infantry]
+    },
+    {
+        name: 'R Duel Flying',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'Grants HP+3. If unit is 5★ and level 40 and unit`s stats total less than 160, treats unit`s stats as 160 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 70,
+                statIncreases: [{ key: 0, value: 3 }]
+            },
+            {
+                value: '2',
+                description:
+                    'Grants HP+4. If unit is 5★ and level 40 and unit`s stats total less than 165, treats unit`s stats as 165 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 150,
+                statIncreases: [{ key: 0, value: 4 }]
+            },
+            {
+                value: '3',
+                description:
+                    'Grants HP+5. If unit is 5★ and level 40 and unit`s stats total less than 170, treats unit`s stats as 170 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 300,
+                statIncreases: [{ key: 0, value: 5 }]
+            }
+        ],
+        required: [red, flying]
+    },
+    {
+        name: 'G Duel Infantry',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'Grants HP+3. If unit is 5★ and level 40 and unit`s stats total less than 160, treats unit`s stats as 160 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 70,
+                statIncreases: [{ key: 0, value: 3 }]
+            },
+            {
+                value: '2',
+                description:
+                    'Grants HP+4. If unit is 5★ and level 40 and unit`s stats total less than 165, treats unit`s stats as 165 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 150,
+                statIncreases: [{ key: 0, value: 4 }]
+            },
+            {
+                value: '3',
+                description:
+                    'Grants HP+5. If unit is 5★ and level 40 and unit`s stats total less than 170, treats unit`s stats as 170 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 300,
+                statIncreases: [{ key: 0, value: 5 }]
+            }
+        ],
+        required: [green, infantry]
+    },
+    {
+        name: 'G Duel Flying',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'Grants HP+3. If unit is 5★ and level 40 and unit`s stats total less than 160, treats unit`s stats as 160 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 70,
+                statIncreases: [{ key: 0, value: 3 }]
+            },
+            {
+                value: '2',
+                description:
+                    'Grants HP+4. If unit is 5★ and level 40 and unit`s stats total less than 165, treats unit`s stats as 165 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 150,
+                statIncreases: [{ key: 0, value: 4 }]
+            },
+            {
+                value: '3',
+                description:
+                    'Grants HP+5. If unit is 5★ and level 40 and unit`s stats total less than 170, treats unit`s stats as 170 in modes like Arena. (Higher-scoring opponents will appear. Stat total calculation excludes any values added by merges and skills.)',
+                sp: 300,
+                statIncreases: [{ key: 0, value: 5 }]
+            }
+        ],
+        required: [green, flying]
     }
 ];

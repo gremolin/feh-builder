@@ -39,10 +39,49 @@ export const fehAssists: Skill[] = [
         ]
     },
     {
+        name: 'Dance',
+        description: 'Grants another action to target ally.\n(Cannot target an ally with Sing or Dance.) ',
+        sp: 150,
+        required: [
+            'Olivia: Blushing Beauty',
+            'Ninian: Oracle of Destiny',
+            'Olivia: Festival Dancer',
+            'Inigo: Indigo Dancer',
+            'Lene: Yearning Dancer',
+            'Ninian: Bright-Eyed Bride',
+            'Olivia: Sky-High Dancer',
+            'Micaiah: Summer`s Dawn',
+            'Ryoma: Dancing Samurai',
+            'Elincia: Estival Princess',
+            'Silvia: Traveling Dancer',
+            'Rinea: Reminiscent Belle',
+            'Berkut: Debonair Noble',
+            'Ishtar: Thunder`s Waltz',
+            'Nephenee: Sincere Dancer',
+            'Reinhardt: Lightning`s Rondo',
+            'Larum: Sprightly Dancer',
+            'Phina: Roving Dancer',
+            'Tethys: Beloved Dancer',
+            'Peony: Sweet Dream'
+        ]
+    },
+    {
         name: 'Gray Waves',
         description:
             'Grants another action to target ally, and if target is an infantry or flying ally, target can move 1 extra space.\n(That turn only. Does not stack. Cannot target an ally with Sing or Dance. This skill treated as Sing or Dance.)',
         sp: 400,
         required: ['Azura: Vallite Songstress']
+    },
+    {
+        name: 'Reposition',
+        description: 'Target ally moves to opposite side of unit.',
+        sp: 150,
+        restrictions: [staff]
+    },
+    {
+        name: 'Smite',
+        description: 'Pushes target ally 2 spaces away.',
+        sp: 150,
+        restrictions: [staff]
     }
 ];

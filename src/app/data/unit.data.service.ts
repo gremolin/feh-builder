@@ -125,6 +125,8 @@ export class UnitDataService {
     }
 
     getUnitsByBSkill(bSkill: Skill, bSub: string): any[] {
+        console.log('this.unitsByASkill', this.unitsByASkill);
+        console.log('this.unitsByBSkill', this.unitsByBSkill);
         if (bSkill) {
             const key = bSub ? bSkill.name + bSub : bSkill.name;
             return this.unitsByBSkill.get(key);
