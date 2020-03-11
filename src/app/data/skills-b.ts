@@ -1,5 +1,5 @@
 import { Skill } from './data.types';
-import { armor, cavalry, distant, flying, green, infantry, none, red, staff } from './hardcoded';
+import { armor, beast, breath, cavalry, distant, flying, green, infantry, none, red, staff } from './hardcoded';
 
 export const fehBSkills: Skill[] = [
     { name: '-', description: '-' },
@@ -556,6 +556,56 @@ export const fehBSkills: Skill[] = [
         restrictions: [armor, flying]
     },
     {
+        name: 'Lull Atk/Def',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'Inflicts Atk/Def-1 on foe and neutralizes foe`s bonuses to Atk/Def (from skills like Fortify, Rally, etc.) during combat.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'Inflicts Atk/Def-2 on foe and neutralizes foe`s bonuses to Atk/Def (from skills like Fortify, Rally, etc.) during combat.',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'Inflicts Atk/Def-3 on foe and neutralizes foe`s bonuses to Atk/Def (from skills like Fortify, Rally, etc.) during combat.',
+                sp: 240
+            }
+        ],
+        restrictions: [armor, flying]
+    },
+    {
+        name: 'Lull Spd/Res',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'Inflicts Spd/Res-1 on foe and neutralizes foe`s bonuses to Spd/Res (from skills like Fortify, Rally, etc.) during combat.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'Inflicts Spd/Res-2 on foe and neutralizes foe`s bonuses to Spd/Res (from skills like Fortify, Rally, etc.) during combat.',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'Inflicts Spd/Res-3 on foe and neutralizes foe`s bonuses to Spd/Res (from skills like Fortify, Rally, etc.) during combat.',
+                sp: 240
+            }
+        ],
+        restrictions: [armor, flying]
+    },
+    {
         name: 'Null Follow-Up',
         description: '',
         skillLevels: [
@@ -741,6 +791,12 @@ export const fehBSkills: Skill[] = [
         restrictions: [staff, distant]
     },
     {
+        name: 'Live for Bounty',
+        description: 'If unit survives, get 1.5x shards/crystals from a Training Tower map.\n(Only highest value applied. Does not stack.)',
+        sp: 150,
+        restrictions: [none]
+    },
+    {
         name: 'Wings of Mercy',
         description: '',
         skillLevels: [
@@ -761,5 +817,197 @@ export const fehBSkills: Skill[] = [
             }
         ],
         restrictions: [none]
+    },
+    {
+        name: 'Dazzling Staff',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'At start of combat, if unit`s HP = 100%, foe cannot counterattack. ',
+                sp: 60
+            },
+            {
+                value: '2',
+                description: 'At start of combat, if unit`s HP ≥ 50%, foe cannot counterattack. ',
+                sp: 120
+            },
+            {
+                value: '3',
+                description: 'Foe cannot counterattack.',
+                sp: 240
+            }
+        ],
+        required: [staff]
+    },
+    {
+        name: 'Wrathful Staff',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'At start of combat, if unit`s HP = 100%, calculates damage from staff like other weapons.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description: 'At start of combat, if unit`s HP ≥ 50%, calculates damage from staff like other weapons.',
+                sp: 120
+            },
+            {
+                value: '3',
+                description: 'Calculates damage from staff like other weapons.',
+                sp: 240
+            }
+        ],
+        required: [staff]
+    },
+    {
+        name: 'Vengeful Fighter',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'If unit`s HP ≥ 90% and foe initiates combat, grants Special cooldown charge +1 per unit`s attack, and unit makes a guaranteed follow-up attack. (Does not stack.) ',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'If unit`s HP ≥ 70% and foe initiates combat, grants Special cooldown charge +1 per unit`s attack, and unit makes a guaranteed follow-up attack. (Does not stack.) ',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'If unit`s HP ≥ 50% and foe initiates combat, grants Special cooldown charge +1 per unit`s attack, and unit makes a guaranteed follow-up attack. (Does not stack.) ',
+                sp: 240
+            }
+        ],
+        required: [armor]
+    },
+    {
+        name: 'Atk/Res Link',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'If a movement Assist skill (like Reposition, Shove, Pivot, etc.) is used by unit or targets unit, grants Atk/Res+2 to unit and target ally or unit and targeting ally for 1 turn.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'If a movement Assist skill (like Reposition, Shove, Pivot, etc.) is used by unit or targets unit, grants Atk/Res+4 to unit and target ally or unit and targeting ally for 1 turn.',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'If a movement Assist skill (like Reposition, Shove, Pivot, etc.) is used by unit or targets unit, grants Atk/Res+6 to unit and target ally or unit and targeting ally for 1 turn.',
+                sp: 240
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
+        name: 'Even Pulse Tie',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'At start of even-number turns, if foe with the lowest HP has its Special ready and unit`s HP ≥ that foe`s HP+5, inflicts Special cooldown count+2 on that foe. (Cannot exceed the foe`s maximum Special cooldown.)',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At start of even-number turns, if foe with the lowest HP has its Special ready and unit`s HP ≥ that foe`s HP+3, inflicts Special cooldown count+2 on that foe. (Cannot exceed the foe`s maximum Special cooldown.) ',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'At start of even-number turns, if foe with the lowest HP has its Special ready and unit`s HP ≥ that foe`s HP+1, inflicts Special cooldown count+2 on that foe. (Cannot exceed the foe`s maximum Special cooldown.) ',
+                sp: 240
+            }
+        ],
+        restrictions: [armor, flying]
+    },
+    {
+        name: 'Atk/Def Ruse',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'If a Rally Assist skill is used by unit or targets unit, inflicts Atk/Def-1 and【Guard】on foes in cardinal directions of unit and target through their next actions.\n\n【Guard】\nInflicts Special cooldown charge -1 on target per attack during combat through its next action. (Only highest value applied. Does not stack.) ',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'If a Rally Assist skill is used by unit or targets unit, inflicts Atk/Def-3 and【Guard】on foes in cardinal directions of unit and target through their next actions.\n\n【Guard】\nInflicts Special cooldown charge -1 on target per attack during combat through its next action. (Only highest value applied. Does not stack.) ',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'If a Rally Assist skill is used by unit or targets unit, inflicts Atk/Def-5 and【Guard】on foes in cardinal directions of unit and target through their next actions.\n\n【Guard】\nInflicts Special cooldown charge -1 on target per attack during combat through its next action. (Only highest value applied. Does not stack.) ',
+                sp: 240
+            }
+        ],
+        restrictions: [armor, flying, staff]
+    },
+    {
+        name: 'Escape Route',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If unit`s HP ≤ 30%, unit can move to a space adjacent to any ally',
+                sp: 60
+            },
+            {
+                value: '2',
+                description: 'If unit`s HP ≤ 40%, unit can move to a space adjacent to any ally',
+                sp: 120
+            },
+            {
+                value: '3',
+                description: 'If unit`s HP ≤ 50%, unit can move to a space adjacent to any ally',
+                sp: 240
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Pegasus Flight',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'At start of combat, if unit`s Spd ≥ foe`s Spd-7, inflicts penalty on foe`s Atk/Def during combat = 30% of difference between Res stats (unit’s Res minus foe’s Res) before combat. (Maximum penalty of -3.)',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At start of combat, if unit`s Spd ≥ foe`s Spd-7, inflicts penalty on foe`s Atk/Def during combat = 40% of difference between Res stats (unit’s Res minus foe’s Res) before combat. (Maximum penalty of -5.)',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'At start of combat, if unit`s Spd ≥ foe`s Spd-7, inflicts penalty on foe`s Atk/Def during combat = 50% of difference between Res stats (unit’s Res minus foe’s Res) before combat. (Maximum penalty of -7.)',
+                sp: 240
+            }
+        ],
+        restrictions: [distant, beast, breath, staff],
+        required: [flying]
     }
 ];

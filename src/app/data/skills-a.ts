@@ -1,5 +1,5 @@
 import { Skill } from './data.types';
-import { blue, cavalry, closeRange, colourless, flying, green, infantry, none, red, staff } from './hardcoded';
+import { blue, cavalry, closeRange, colourless, distant, flying, green, infantry, none, red, staff } from './hardcoded';
 
 export const fehASkills: Skill[] = [
     { name: '-', description: '-' },
@@ -27,6 +27,12 @@ export const fehASkills: Skill[] = [
             }
         ],
         restrictions: [none]
+    },
+    {
+        name: 'Distant Counter',
+        description: 'Unit can counterattack regardless of foe`s range.',
+        sp: 300,
+        restrictions: [distant]
     },
     {
         name: 'Close Counter',
@@ -57,7 +63,7 @@ export const fehASkills: Skill[] = [
         restrictions: [staff]
     },
     {
-        name: 'Atk / Def Bond',
+        name: 'Atk/Def Bond',
         description: '',
         skillLevels: [
             {
@@ -79,7 +85,29 @@ export const fehASkills: Skill[] = [
         restrictions: [none]
     },
     {
-        name: 'Atk / Res Bond',
+        name: 'Spd/Def Bond',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'If unit is adjacent to an ally, grants Spd/Def+3 during combat. ',
+                sp: 60
+            },
+            {
+                value: '2',
+                description: 'If unit is adjacent to an ally, grants Spd/Def+4 during combat. ',
+                sp: 120
+            },
+            {
+                value: '3',
+                description: 'If unit is adjacent to an ally, grants Spd/Def+5 during combat. ',
+                sp: 240
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Atk/Res Bond',
         description: '',
         skillLevels: [
             {
@@ -101,7 +129,7 @@ export const fehASkills: Skill[] = [
         restrictions: [none]
     },
     {
-        name: 'Atk / Spd',
+        name: 'Atk/Spd',
         description: '',
         skillLevels: [
             {
@@ -126,7 +154,7 @@ export const fehASkills: Skill[] = [
         restrictions: [none]
     },
     {
-        name: 'Atk / Spd Bond',
+        name: 'Atk/Spd Bond',
         description: '',
         skillLevels: [
             {
@@ -143,6 +171,12 @@ export const fehASkills: Skill[] = [
                 value: '3',
                 description: 'If unit is adjacent to an ally, grants Atk/Spd+5 during combat. ',
                 sp: 240
+            },
+            {
+                value: '4',
+                description:
+                    'If unit is adjacent to an ally, grants Atk/Spd+7 to unit and neutralizes unit`s penalties to Atk/Spd during combat. ',
+                sp: 300
             }
         ],
         restrictions: [none]
@@ -173,7 +207,7 @@ export const fehASkills: Skill[] = [
         restrictions: [none]
     },
     {
-        name: 'Atk / Def',
+        name: 'Atk/Def',
         description: '',
         skillLevels: [
             {
@@ -198,7 +232,7 @@ export const fehASkills: Skill[] = [
         restrictions: [none]
     },
     {
-        name: 'Atk / Res',
+        name: 'Atk/Res',
         description: '',
         skillLevels: [
             {
@@ -363,7 +397,7 @@ export const fehASkills: Skill[] = [
         restrictions: [staff]
     },
     {
-        name: 'Def / Res',
+        name: 'Def/Res',
         description: '',
         skillLevels: [
             {
@@ -388,7 +422,7 @@ export const fehASkills: Skill[] = [
         restrictions: [none]
     },
     {
-        name: 'Def / Res Bond',
+        name: 'Def/Res Bond',
         description: '',
         skillLevels: [
             {
@@ -473,6 +507,28 @@ export const fehASkills: Skill[] = [
             {
                 value: '3',
                 description: 'At start of turn, if unit`s HP ≤ 50%, grants Def+7 for 1 turn. ',
+                sp: 160
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Defiant Spd',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'At start of turn, if unit`s HP ≤ 50%, grants Spd+3 for 1 turn. ',
+                sp: 40
+            },
+            {
+                value: '2',
+                description: 'At start of turn, if unit`s HP ≤ 50%, grants Spd+5 for 1 turn. ',
+                sp: 80
+            },
+            {
+                value: '3',
+                description: 'At start of turn, if unit`s HP ≤ 50%, grants Spd+7 for 1 turn. ',
                 sp: 160
             }
         ],
@@ -703,7 +759,7 @@ export const fehASkills: Skill[] = [
         restrictions: [staff]
     },
     {
-        name: 'HP / Atk',
+        name: 'HP/Atk',
         description: '',
         skillLevels: [
             {
@@ -728,7 +784,7 @@ export const fehASkills: Skill[] = [
         restrictions: [none]
     },
     {
-        name: 'HP / Spd',
+        name: 'HP/Spd',
         description: '',
         skillLevels: [
             {
@@ -753,7 +809,7 @@ export const fehASkills: Skill[] = [
         restrictions: [none]
     },
     {
-        name: 'HP / Def',
+        name: 'HP/Def',
         description: '',
         skillLevels: [
             {
@@ -778,7 +834,7 @@ export const fehASkills: Skill[] = [
         restrictions: [none]
     },
     {
-        name: 'HP / Res',
+        name: 'HP/Res',
         description: '',
         skillLevels: [
             {
@@ -857,7 +913,7 @@ export const fehASkills: Skill[] = [
         restrictions: [none]
     },
     {
-        name: 'Spd / Def',
+        name: 'Spd/Def',
         description: '',
         skillLevels: [
             {
@@ -882,7 +938,7 @@ export const fehASkills: Skill[] = [
         restrictions: [none]
     },
     {
-        name: 'Spd / Res',
+        name: 'Spd/Res',
         description: '',
         skillLevels: [
             {
@@ -907,7 +963,7 @@ export const fehASkills: Skill[] = [
         restrictions: [none]
     },
     {
-        name: 'Spd / Res Bond',
+        name: 'Spd/Res Bond',
         description: '',
         skillLevels: [
             {
@@ -1016,7 +1072,7 @@ export const fehASkills: Skill[] = [
             },
             {
                 value: '2',
-                description: 'If unit initiates combat, grants Atk/Spd+2 during combat.',
+                description: 'If unit initiates combat, grants Atk/Spd+4 during combat.',
                 sp: 240
             },
             {
@@ -1291,21 +1347,45 @@ export const fehASkills: Skill[] = [
             {
                 value: '1',
                 description: 'Grants Atk/Spd/Def/Res+1.\nAfter combat, deals 2 damage to unit.',
+                statIncreases: [
+                    { key: 1, value: 1 },
+                    { key: 2, value: 1 },
+                    { key: 3, value: 1 },
+                    { key: 4, value: 1 }
+                ],
                 sp: 50
             },
             {
                 value: '2',
                 description: 'Grants Atk/Spd/Def/Res+2.\nAfter combat, deals 4 damage to unit.',
+                statIncreases: [
+                    { key: 1, value: 2 },
+                    { key: 2, value: 2 },
+                    { key: 3, value: 2 },
+                    { key: 4, value: 2 }
+                ],
                 sp: 100
             },
             {
                 value: '3',
                 description: 'Grants Atk/Spd/Def/Res+3.\nAfter combat, deals 6 damage to unit.',
+                statIncreases: [
+                    { key: 1, value: 3 },
+                    { key: 2, value: 3 },
+                    { key: 3, value: 3 },
+                    { key: 4, value: 3 }
+                ],
                 sp: 200
             },
             {
                 value: '4',
                 description: 'Grants Atk/Spd/Def/Res+4.\nAfter combat, deals 8 damage to unit.',
+                statIncreases: [
+                    { key: 1, value: 4 },
+                    { key: 2, value: 4 },
+                    { key: 3, value: 4 },
+                    { key: 4, value: 4 }
+                ],
                 sp: 300
             }
         ],
@@ -1450,5 +1530,146 @@ export const fehASkills: Skill[] = [
             }
         ],
         required: [green, flying]
+    },
+    {
+        name: 'Atk/Def Push',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'At start of combat, if unit`s HP = 100%, grants Atk/Def+3, but if unit attacked, deals 1 damage to unit after combat. ',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At start of combat, if unit`s HP = 100%, grants Atk/Def+4, but if unit attacked, deals 1 damage to unit after combat. ',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'At start of combat, if unit`s HP = 100%, grants Atk/Def+5, but if unit attacked, deals 1 damage to unit after combat. ',
+                sp: 240
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Atk/Spd Push',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'At start of combat, if unit`s HP = 100%, grants Atk/Spd+3, but if unit attacked, deals 1 damage to unit after combat. ',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At start of combat, if unit`s HP = 100%, grants Atk/Spd+4, but if unit attacked, deals 1 damage to unit after combat. ',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'At start of combat, if unit`s HP = 100%, grants Atk/Spd+5, but if unit attacked, deals 1 damage to unit after combat. ',
+                sp: 240
+            },
+            {
+                value: '4',
+                description:
+                    'At start of combat, if unit`s HP ≥ 25%, grants Atk/Spd+7, but after combat, if unit attacked, deals 5 damage to unit.',
+                sp: 300,
+                statIncreases: [
+                    { key: 1, value: 7 },
+                    { key: 2, value: 7 },
+                    { key: 3, value: -5 },
+                    { key: 4, value: -5 }
+                ]
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Grani`s Shield',
+        description: 'Neutralizes "effective against cavalry" bonuses.',
+        required: [cavalry],
+        sp: 200
+    },
+    {
+        name: 'Spd/Res Form',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Grants Spd/Res+X to unit during combat. (X = number of allies within 2 spaces; max 3.)',
+                sp: 60
+            },
+            {
+                value: '2',
+                description: 'Grants Spd/Res+X to unit during combat. (X = number of allies within 2 spaces + 2; max 5.)',
+                sp: 120
+            },
+            {
+                value: '3',
+                description: 'Grants Spd/Res+X to unit during combat. (X = 2 × number of allies within 2 spaces, + 1; max 7.)',
+                sp: 240
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Life and Death',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Grants Atk/Spd+3.\nInflicts Def/Res-3.',
+                sp: 60,
+                statIncreases: [
+                    { key: 1, value: 3 },
+                    { key: 2, value: 3 },
+                    { key: 3, value: -3 },
+                    { key: 4, value: -3 }
+                ]
+            },
+            {
+                value: '2',
+                description: 'Grants Atk/Spd+4.\nInflicts Def/Res-4.',
+                sp: 120,
+                statIncreases: [
+                    { key: 1, value: 4 },
+                    { key: 2, value: 4 },
+                    { key: 3, value: -4 },
+                    { key: 4, value: -4 }
+                ]
+            },
+            {
+                value: '3',
+                description: 'Grants Atk/Spd+5.\nInflicts Def/Res-5.',
+                sp: 240,
+                statIncreases: [
+                    { key: 1, value: 5 },
+                    { key: 2, value: 5 },
+                    { key: 3, value: -5 },
+                    { key: 4, value: -5 }
+                ]
+            },
+            {
+                value: '4',
+                description: 'Grants Atk/Spd+7.\nInflicts Def/Res-5.',
+                sp: 300,
+                statIncreases: [
+                    { key: 1, value: 7 },
+                    { key: 2, value: 7 },
+                    { key: 3, value: -5 },
+                    { key: 4, value: -5 }
+                ]
+            }
+        ],
+        restrictions: [staff]
     }
 ];

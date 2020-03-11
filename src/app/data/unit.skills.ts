@@ -499,8 +499,8 @@ export const unitSkills: UnitSkills[] = [
         ],
         aSkills: [
             { key: 'Speed', subKey: '1', level: 3 },
-            { key: 'HP / Spd', subKey: '1', level: 4 },
-            { key: 'HP / Spd', subKey: '2', level: 5 }
+            { key: 'HP/Spd', subKey: '1', level: 4 },
+            { key: 'HP/Spd', subKey: '2', level: 5 }
         ],
         cSkills: [
             { key: 'Odd Res Wave', subKey: '1', level: 1 },
@@ -653,9 +653,9 @@ export const unitSkills: UnitSkills[] = [
             { key: 'Book of Shadows', level: 5 }
         ],
         aSkills: [
-            { key: 'Spd / Res Bond', subKey: '1', level: 1 },
-            { key: 'Spd / Res Bond', subKey: '2', level: 2 },
-            { key: 'Spd / Res Bond', subKey: '3', level: 4 }
+            { key: 'Spd/Res Bond', subKey: '1', level: 1 },
+            { key: 'Spd/Res Bond', subKey: '2', level: 2 },
+            { key: 'Spd/Res Bond', subKey: '3', level: 4 }
         ],
         bSkills: [
             { key: 'Torrent Dance', subKey: '1', level: 3 },
@@ -835,30 +835,582 @@ export const unitSkills: UnitSkills[] = [
             { key: 'Wings of Mercy', subKey: '3', level: 4 }
         ]
     },
-    { key: 'Boey: Skillful Survivor', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Brady: Daunting Priest', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Brunnya: Devoted General', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Bruno: Masked Hare', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Byleth: Proven Professor', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Byleth: Tested Professor', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Caeda: Talys`s Bride', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Caeda: Talys`s Heart', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Cain: The Bull', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Caineghis: Gallia`s Lion King', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Camilla: Bewitching Beauty', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Camilla: Flower of Fantasy', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Camilla: Holiday Traveler', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Camilla: Light of Nohr', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Camilla: Spring Princess', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Camilla: Steamy Secrets', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Camilla: Tropical Beauty', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Camus: Sable Knight', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Canas: Wisdom Seeker', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Catria: Middle Whitewing', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Catria: Mild Middle Sister', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Catria: Spring Whitewing', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Cecilia: Etrurian General', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Cecilia: Festive Instructor', wps: [{ key: 'Hammer', level: 1 }] },
+    {
+        key: 'Boey: Skillful Survivor',
+        wps: [
+            { key: 'Wind', level: 1 },
+            { key: 'Elwind', level: 2 },
+            { key: 'Gronnowl', level: 3 },
+            { key: 'Gronnowl+', level: 5 },
+            { key: 'Inscribed Tome', level: 5 }
+        ],
+        specials: [
+            { key: 'Growing Ember', level: 3 },
+            { key: 'Ignis', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Earth Boost', subKey: '1', level: 1 },
+            { key: 'Earth Boost', subKey: '2', level: 2 },
+            { key: 'Earth Boost', subKey: '3', level: 4 }
+        ],
+        bSkills: [
+            { key: 'Renewal', subKey: '1', level: 3 },
+            { key: 'Renewal', subKey: '2', level: 4 },
+            { key: 'Renewal', subKey: '3', level: 5 }
+        ]
+    },
+    {
+        key: 'Brady: Daunting Priest',
+        wps: [
+            { key: 'Assault', level: 1 },
+            { key: 'Slow', level: 3 },
+            { key: 'Slow+', level: 5 }
+        ],
+        assists: [
+            { key: 'Heal', level: 1 },
+            { key: 'Mend', level: 2 },
+            { key: 'Recover', level: 3 },
+            { key: 'Recover+', level: 5 }
+        ],
+        specials: [
+            { key: 'Growing Ember', level: 3 },
+            { key: 'Ignis', level: 4 }
+        ]
+    },
+    {
+        key: 'Brunnya: Devoted General',
+        wps: [
+            { key: 'Thunder', level: 1 },
+            { key: 'Elthunder', level: 2 },
+            { key: 'Thoron', level: 4 },
+            { key: 'Fimbulvetr', level: 5 }
+        ],
+        specials: [
+            { key: 'Chilling Wind', level: 3 },
+            { key: 'Glacies', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Death Blow', subKey: '1', level: 3 },
+            { key: 'Death Blow', subKey: '2', level: 4 },
+            { key: 'Death Blow', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Res Smoke', subKey: '1', level: 1 },
+            { key: 'Res Smoke', subKey: '2', level: 2 },
+            { key: 'Res Smoke', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Bruno: Masked Hare',
+        wps: [
+            { key: 'Assault', level: 1 },
+            { key: 'Ovoid Staff', level: 3 },
+            { key: 'Ovoid Staff+', level: 5 }
+        ],
+        assists: [
+            { key: 'Heal', level: 1 },
+            { key: 'Reconcile', level: 2 },
+            { key: 'Martyr', level: 3 },
+            { key: 'Martyr+', level: 5 }
+        ],
+        specials: [
+            { key: 'Imbue', level: 2 },
+            { key: 'Miracle', level: 3 }
+        ],
+        aSkills: [
+            { key: 'Atk/Def Push', subKey: '1', level: 1 },
+            { key: 'Atk/Def Push', subKey: '2', level: 2 },
+            { key: 'Atk/Def Push', subKey: '3', level: 4 }
+        ],
+        bSkills: [
+            { key: 'Dazzling Staff', subKey: '1', level: 3 },
+            { key: 'Dazzling Staff', subKey: '2', level: 4 },
+            { key: 'Dazzling Staff', subKey: '3', level: 5 }
+        ]
+    },
+    {
+        key: 'Byleth: Proven Professor',
+        wps: [
+            { key: 'Iron Sword', level: 1 },
+            { key: 'Steel Sword', level: 2 },
+            { key: 'Silver Sword', level: 3 },
+            { key: 'Creator Sword', level: 5 }
+        ],
+        specials: [
+            { key: 'Dragon Gaze', level: 3 },
+            { key: 'Draconic Aura', level: 4 },
+            { key: 'Ruptured Sky', level: 5 }
+        ],
+        aSkills: [
+            { key: 'Fury', subKey: '1', level: 2 },
+            { key: 'Fury', subKey: '2', level: 3 },
+            { key: 'Fury', subKey: '3', level: 4 },
+            { key: 'Fury', subKey: '4', level: 5 }
+        ],
+        bSkills: [
+            { key: 'Wrath', subKey: '1', level: 3 },
+            { key: 'Wrath', subKey: '2', level: 4 },
+            { key: 'Wrath', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Even Atk Wave', subKey: '1', level: 1 },
+            { key: 'Even Atk Wave', subKey: '2', level: 2 },
+            { key: 'Even Atk Wave', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Byleth: Tested Professor',
+        wps: [
+            { key: 'Iron Sword', level: 1 },
+            { key: 'Steel Sword', level: 2 },
+            { key: 'Silver Sword', level: 4 },
+            { key: 'Creator Sword', level: 5 }
+        ],
+        specials: [
+            { key: 'Dragon Gaze', level: 3 },
+            { key: 'Draconic Aura', level: 4 },
+            { key: 'Ruptured Sky', level: 5 }
+        ],
+        aSkills: [{ key: 'Distant Counter', subKey: '1', level: 5 }],
+        bSkills: [
+            { key: 'Chill Spd', subKey: '1', level: 3 },
+            { key: 'Chill Spd', subKey: '2', level: 4 },
+            { key: 'Chill Spd', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Odd Spd Wave', subKey: '1', level: 1 },
+            { key: 'Odd Spd Wave', subKey: '2', level: 2 },
+            { key: 'Odd Spd Wave', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Caeda: Talys`s Bride',
+        wps: [
+            { key: 'Thunder', level: 1 },
+            { key: 'Elthunder', level: 2 },
+            { key: 'Blessed Bouquet', level: 3 },
+            { key: 'Blessed Bouquet+', level: 5 }
+        ],
+        specials: [
+            { key: 'Chilling Wind', level: 3 },
+            { key: 'Iceberg', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Resistance', subKey: '1', level: 3 },
+            { key: 'Atk/Res', subKey: '1', level: 4 },
+            { key: 'Atk/Res', subKey: '2', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Hone Spd', subKey: '1', level: 1 },
+            { key: 'Hone Spd', subKey: '2', level: 2 },
+            { key: 'Hone Spd', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Caeda: Talys`s Heart',
+        wps: [
+            { key: 'Iron Sword', level: 1 },
+            { key: 'Steel Sword', level: 2 },
+            { key: 'Armorslayer', level: 4 },
+            { key: 'Armorslayer+', level: 5 },
+            { key: 'Wing Sword', level: 5 }
+        ],
+        assists: [{ key: 'Rally Speed', level: 3 }],
+        specials: [
+            { key: 'Chilling', level: 3 },
+            { key: 'Glacies', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Darting Blow', subKey: '1', level: 3 },
+            { key: 'Darting Blow', subKey: '2', level: 4 },
+            { key: 'Darting Blow', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Fortify Res', subKey: '1', level: 1 },
+            { key: 'Fortify Res', subKey: '2', level: 2 },
+            { key: 'Fortify Fliers', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Cain: The Bull',
+        wps: [
+            { key: 'IRon Sword', level: 1 },
+            { key: 'Steel Sword', level: 2 },
+            { key: 'Brave Sword', level: 3 },
+            { key: 'Brave Sword+', level: 5 },
+            { key: 'Bull Blade', level: 5 }
+        ],
+        specials: [
+            { key: 'Buckler', level: 3 },
+            { key: 'Escutcheon	', level: 4 }
+        ],
+        bSkills: [
+            { key: 'Wings of Mercy', subKey: '1', level: 1 },
+            { key: 'Wings of Mercy', subKey: '2', level: 2 },
+            { key: 'Wings of Mercy', subKey: '3', level: 4 }
+        ],
+        cSkills: [
+            { key: 'Threaten Atk', subKey: '1', level: 3 },
+            { key: 'Threaten Atk', subKey: '2', level: 4 },
+            { key: 'Threaten Atk', subKey: '3', level: 5 }
+        ]
+    },
+    {
+        key: 'Caineghis: Gallia`s Lion King',
+        wps: [
+            { key: 'Whelp (Armored)', level: 1 },
+            { key: 'Yearling (Arm.)', level: 2 },
+            { key: 'Adult (Armored)', level: 3 },
+            { key: 'Lion King Fang', level: 5 }
+        ],
+        specials: [
+            { key: 'Glowing Ember', level: 3 },
+            { key: 'Bonfire', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Distant Def', subKey: '1', level: 2 },
+            { key: 'Distant Def', subKey: '2', level: 3 },
+            { key: 'Distant Def', subKey: '3', level: 4 },
+            { key: 'Distant Def', subKey: '4', level: 5 }
+        ],
+        bSkills: [
+            { key: 'Vengeful Fighter', subKey: '1', level: 3 },
+            { key: 'Vengeful Fighter', subKey: '2', level: 4 },
+            { key: 'Vengeful Fighter', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Distant Guard', subKey: '1', level: 1 },
+            { key: 'Distant Guard', subKey: '2', level: 2 },
+            { key: 'Distant Guard', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Camilla: Bewitching Beauty',
+        wps: [
+            { key: 'Iron Axe', level: 1 },
+            { key: 'Steel Axe', level: 2 },
+            { key: 'Brave Axe', level: 3 },
+            { key: 'Brave Axe+', level: 5 },
+            { key: 'Camilla`s Axe', level: 5 }
+        ],
+        specials: [
+            { key: 'Dragon Gaze', level: 3 },
+            { key: 'Draconic Aura', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Darting Blow', subKey: '1', level: 3 },
+            { key: 'Darting Blow', subKey: '2', level: 4 },
+            { key: 'Darting Blow', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Savage Blow', subKey: '1', level: 1 },
+            { key: 'Savage Blow', subKey: '2', level: 2 },
+            { key: 'Savage Blow', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Camilla: Flower of Fantasy',
+        wps: [
+            { key: 'Flux', level: 1 },
+            { key: 'Ruin', level: 2 },
+            { key: 'Fenrir', level: 3 },
+            { key: 'Book of Dreams', level: 5 }
+        ],
+        assists: [{ key: 'Draw Back', level: 3 }],
+        specials: [
+            { key: 'Chilling', level: 3 },
+            { key: 'Glacies', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Atk/Res Bond', subKey: '1', level: 1 },
+            { key: 'Atk/Res Bond', subKey: '2', level: 2 },
+            { key: 'Atk/Res Bond', subKey: '3', level: 4 }
+        ],
+        bSkills: [
+            { key: 'Atk/Res Link', subKey: '1', level: 3 },
+            { key: 'Atk/Res Link', subKey: '2', level: 4 },
+            { key: 'Atk/Res Link', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Spur Atk', subKey: '1', level: 3 },
+            { key: 'Spur Atk', subKey: '2', level: 2 },
+            { key: 'Goad Fliers', level: 5 }
+        ]
+    },
+    {
+        key: 'Camilla: Holiday Traveler',
+        wps: [
+            { key: 'Iron Sword', level: 1 },
+            { key: 'Steel Sword', level: 2 },
+            { key: 'Kadomatsu', level: 3 },
+            { key: 'Kadomatsu+', level: 5 }
+        ],
+
+        specials: [
+            { key: 'Dragon Gaze', level: 3 },
+            { key: 'Draconic Aura', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Spd/Def Bond', subKey: '1', level: 3 },
+            { key: 'Spd/Def Bond', subKey: '2', level: 4 },
+            { key: 'Spd/Def Bond', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Spur Def', subKey: '1', level: 1 },
+            { key: 'Spur Def', subKey: '2', level: 2 },
+            { key: 'Ward Fliers', level: 4 }
+        ]
+    },
+    {
+        key: 'Camilla: Light of Nohr',
+        wps: [
+            { key: 'Assault', level: 1 },
+            { key: 'Sanngriðr', level: 5 }
+        ],
+        assists: [
+            { key: 'Heal', level: 1 },
+            { key: 'Reconcile', level: 2 },
+            { key: 'Restore	', level: 3 },
+            { key: 'Restore+', level: 5 }
+        ],
+        aSkills: [
+            { key: 'Atk/Spd Push', subKey: '1', level: 2 },
+            { key: 'Atk/Spd Push', subKey: '2', level: 3 },
+            { key: 'Atk/Spd Push', subKey: '3', level: 4 }
+        ],
+        bSkills: [
+            { key: 'Wrathful Staff', subKey: '1', level: 3 },
+            { key: 'Wrathful Staff', subKey: '2', level: 4 },
+            { key: 'Wrathful Staff', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Atk Tactic', subKey: '1', level: 1 },
+            { key: 'Atk Tactic', subKey: '2', level: 2 },
+            { key: 'Atk Tactic', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Camilla: Spring Princess',
+        wps: [
+            { key: 'Wind', level: 1 },
+            { key: 'Elwind', level: 2 },
+            { key: 'Green Egg', level: 3 },
+            { key: 'Green Egg+', level: 5 }
+        ],
+        assists: [{ key: 'Rally Attack', level: 3 }],
+        specials: [
+            { key: 'Chilling', level: 3 },
+            { key: 'Glacies', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Defiant Spd', subKey: '1', level: 1 },
+            { key: 'Defiant Spd', subKey: '2', level: 2 },
+            { key: 'Defiant Spd', subKey: '3', level: 4 }
+        ],
+        bSkills: [{ key: 'Live for Bounty', subKey: '1', level: 4 }]
+    },
+    {
+        key: 'Camilla: Steamy Secrets',
+        wps: [
+            { key: 'Iron Dagger', level: 1 },
+            { key: 'Steel Dagger', level: 2 },
+            { key: 'Ouch Pouch', level: 3 },
+            { key: 'Ouch Pouch+', level: 5 }
+        ],
+        aSkills: [
+            { key: 'Attack', subKey: '1', level: 3 },
+            { key: 'Atk/Spd', subKey: '1', level: 4 },
+            { key: 'Atk/Spd', subKey: '2', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Hone Atk', subKey: '1', level: 1 },
+            { key: 'Hone Atk', subKey: '2', level: 2 },
+            { key: 'Hone Fliers', level: 4 }
+        ]
+    },
+    {
+        key: 'Camilla: Tropical Beauty',
+        wps: [
+            { key: 'Thunder', level: 1 },
+            { key: 'Elthunder', level: 2 },
+            { key: 'Juicy Wave', level: 3 },
+            { key: 'Juicy Wave+', level: 5 }
+        ],
+        specials: [
+            { key: 'Dragon Gaze', level: 3 },
+            { key: 'Dragon Aura', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Death Blow', subKey: '1', level: 1 },
+            { key: 'Death Blow', subKey: '2', level: 2 },
+            { key: 'Death Blow', subKey: '3', level: 4 }
+        ],
+        bSkills: [
+            { key: 'Flier Formation', subKey: '1', level: 3 },
+            { key: 'Flier Formation', subKey: '2', level: 4 },
+            { key: 'Flier Formation', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Hone Atk', subKey: '1', level: 3 },
+            { key: 'Hone Atk', subKey: '2', level: 4 },
+            { key: 'Hone Fliers', level: 5 }
+        ]
+    },
+    {
+        key: 'Camus: Sable Knight',
+        wps: [
+            { key: 'Iron Lance', level: 1 },
+            { key: 'Steel Lance', level: 2 },
+            { key: 'Silver Lance', level: 3 },
+            { key: 'Gradivus', level: 5 }
+        ],
+        specials: [
+            { key: 'Rising Thunder', level: 3 },
+            { key: 'Growing Thunder', level: 4 }
+        ],
+        aSkills: [{ key: 'Grani`s Shield', level: 4 }],
+        cSkills: [
+            { key: 'Spur Atk', subKey: '1', level: 1 },
+            { key: 'Spur Atk', subKey: '2', level: 2 },
+            { key: 'Goad Cavalry', level: 4 }
+        ]
+    },
+    {
+        key: 'Canas: Wisdom Seeker',
+        wps: [
+            { key: 'Flux', level: 1 },
+            { key: 'Ruin', level: 2 },
+            { key: 'Rauðrowl', level: 3 },
+            { key: 'Rauðrowl+', level: 5 }
+        ],
+        assists: [{ key: 'Reciprocal Aid', level: 3 }],
+        aSkills: [
+            { key: 'Resistance', subKey: '1', level: 3 },
+            { key: 'HP/Res', subKey: '1', level: 4 },
+            { key: 'HP/Res', subKey: '2', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Res Tactic', subKey: '1', level: 1 },
+            { key: 'Res Tactic', subKey: '2', level: 2 },
+            { key: 'Res Tactic', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Catria: Middle Whitewing',
+        wps: [
+            { key: 'Iron Lance', level: 1 },
+            { key: 'Steel Lance', level: 2 },
+            { key: 'Killer Lance', level: 3 },
+            { key: 'Killer Lance+', level: 5 },
+            { key: 'Whitewing Lance', level: 5 }
+        ],
+        specials: [
+            { key: 'New Moon', level: 3 },
+            { key: 'Luna', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Armored Blow', subKey: '1', level: 1 },
+            { key: 'Armored Blow', subKey: '2', level: 2 },
+            { key: 'Armored Blow', subKey: '3', level: 4 }
+        ],
+        bSkills: [
+            { key: 'Seal Atk', subKey: '1', level: 3 },
+            { key: 'Seal Atk', subKey: '2', level: 4 },
+            { key: 'Seal Atk', subKey: '3', level: 5 }
+        ]
+    },
+    {
+        key: 'Catria: Mild Middle Sister',
+        wps: [
+            { key: 'Iron Sword', level: 1 },
+            { key: 'Steel Sword', level: 2 },
+            { key: 'Silver Sword', level: 3 },
+            { key: 'Astra Blade', level: 5 }
+        ],
+        assists: [
+            { key: 'Harsh Command', level: 3 },
+            { key: 'Harsh Command+', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Atk/Spd Bond', subKey: '1', level: 2 },
+            { key: 'Atk/Spd Bond', subKey: '2', level: 3 },
+            { key: 'Atk/Spd Bond', subKey: '3', level: 4 },
+            { key: 'Atk/Spd Bond', subKey: '4', level: 5 }
+        ],
+        bSkills: [
+            { key: 'Aerobatics', subKey: '1', level: 1 },
+            { key: 'Aerobatics', subKey: '2', level: 2 },
+            { key: 'Aerobatics', subKey: '3', level: 4 }
+        ],
+        cSkills: [
+            { key: 'Spd Tactic', subKey: '1', level: 3 },
+            { key: 'Spd Tactic', subKey: '2', level: 4 },
+            { key: 'Spd Tactic', subKey: '3', level: 5 }
+        ]
+    },
+    {
+        key: 'Catria: Spring Whitewing',
+        wps: [
+            { key: 'Thunder', level: 1 },
+            { key: 'Elthunder', level: 2 },
+            { key: 'Thoron', level: 3 },
+            { key: 'Huginn`s Egg', level: 5 }
+        ],
+        assists: [{ key: 'Draw Back', level: 3 }],
+        bSkills: [
+            { key: 'Chill Res', subKey: '1', level: 3 },
+            { key: 'Chill Res', subKey: '2', level: 4 },
+            { key: 'Chill Res', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Spur Spd', subKey: '1', level: 1 },
+            { key: 'Drive Spd', subKey: '1', level: 2 },
+            { key: 'Drive Spd', subKey: '2', level: 4 }
+        ]
+    },
+    {
+        key: 'Cecilia: Etrurian General',
+        wps: [
+            { key: 'Wind', level: 1 },
+            { key: 'Elwind', level: 2 },
+            { key: 'Gronnraven', level: 3 },
+            { key: 'Gronnraven+	', level: 5 }
+        ],
+        assists: [{ key: 'Rally Resistance', level: 3 }],
+        aSkills: [
+            { key: 'Attack', subKey: '1', level: 3 },
+            { key: 'Attack', subKey: '2', level: 4 },
+            { key: 'Attack', subKey: '3', level: 5 }
+        ],
+        bSkills: [
+            { key: 'Escape Route', subKey: '1', level: 1 },
+            { key: 'Escape Route', subKey: '2', level: 2 },
+            { key: 'Escape Route', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Cecilia: Festive Instructor',
+        wps: [
+            { key: 'Iron Dagger', level: 1 },
+            { key: 'Steel Dagger', level: 2 },
+            { key: 'Goodie Boot', level: 3 },
+            { key: 'Goodie Boot+', level: 5 }
+        ],
+        specials: [
+            { key: 'Chilling Wind', level: 3 },
+            { key: 'Iceberg', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Atk/Res Bond', subKey: '1', level: 1 },
+            { key: 'Atk/Res Bond', subKey: '2', level: 2 },
+            { key: 'Atk/Res Bond', subKey: '3', level: 4 }
+        ],
+        cSkills: [
+            { key: 'Def Ploy', subKey: '1', level: 3 },
+            { key: 'Def Ploy', subKey: '2', level: 4 },
+            { key: 'Def Ploy', subKey: '3', level: 5 }
+        ]
+    },
     { key: 'Ced: Hero on the Wind', wps: [{ key: 'Hammer', level: 1 }] },
     { key: 'Celica: Caring Princess', wps: [{ key: 'Hammer', level: 1 }] },
     { key: 'Celica: Imprisoned Soul', wps: [{ key: 'Hammer', level: 1 }] },
@@ -1280,15 +1832,206 @@ export const unitSkills: UnitSkills[] = [
     { key: 'Yune: Chaos Goddess', wps: [{ key: 'Hammer', level: 1 }] },
     { key: 'Zelgius: Jet-Black General', wps: [{ key: 'Hammer', level: 1 }] },
     { key: 'Zephiel: The Liberator', wps: [{ key: 'Hammer', level: 1 }] },
-    { key: 'Zephiel: Winter`s Crown', wps: [{ key: 'Hammer', level: 1 }] }
-
-    /*,
+    { key: 'Zephiel: Winter`s Crown', wps: [{ key: 'Hammer', level: 1 }] },
+    //
     {
-        key: 'Valter: Dark Moonstone',
-        wpType: lance,
-        range: closeRange,
-        colour: blue,
-        move: flying,
-        wps: [{ key: 'Iron Lance', level: 1 }]
-    }*/
+        key: 'Rath: Wolf of Sacae',
+        wps: [
+            { key: 'Iron Bow', level: 1 },
+            { key: 'Steel Bow', level: 2 },
+            { key: 'Slaying Bow', level: 3 },
+            { key: 'Slaying Bow+', level: 5 }
+        ],
+        specials: [
+            { key: 'Night Sky', level: 3 },
+            { key: 'Glimmer', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Spd/Res Form', subKey: '1', level: 1 },
+            { key: 'Spd/Res Form', subKey: '2', level: 2 },
+            { key: 'Spd/Res Form', subKey: '3', level: 4 }
+        ],
+        cSkills: [
+            { key: 'Def Smoke', subKey: '1', level: 3 },
+            { key: 'Def Smoke', subKey: '2', level: 4 },
+            { key: 'Def Smoke', subKey: '3', level: 5 }
+        ]
+    },
+    {
+        key: 'Nils: Bright Bard',
+        wps: [
+            { key: 'Fire Breath', level: 1 },
+            { key: 'Fire Breath+', level: 2 },
+            { key: 'Flametongue', level: 3 },
+            { key: 'Frost Breath', level: 5 }
+        ],
+        assists: [{ key: 'Play', level: 3 }],
+        aSkills: [
+            { key: 'HP', subKey: '1', level: 1 },
+            { key: 'HP/Def', subKey: '1', level: 2 },
+            { key: 'HP/Def', subKey: '2', level: 4 }
+        ],
+        bSkills: [
+            { key: 'Even Pulse Tie', subKey: '1', level: 3 },
+            { key: 'Even Pulse Tie', subKey: '2', level: 4 },
+            { key: 'Even Pulse Tie', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Infantry Pulse', subKey: '1', level: 3 },
+            { key: 'Infantry Pulse', subKey: '2', level: 4 },
+            { key: 'Infantry Pulse', subKey: '3', level: 5 }
+        ]
+    },
+    {
+        key: 'Leila: Rose amid Fangs',
+        wps: [
+            { key: 'Iron Dagger', level: 1 },
+            { key: 'Steel Dagger', level: 2 },
+            { key: 'Silver Dagger', level: 3 },
+            { key: 'Constant Dagger', level: 5 }
+        ],
+        assists: [
+            { key: 'Rally Speed', level: 3 },
+            { key: 'Rally Atk/Spd', level: 4 },
+            { key: 'Rally Atk/Spd+', level: 5 }
+        ],
+        aSkills: [
+            { key: 'Life and Death', subKey: '1', level: 2 },
+            { key: 'Life and Death', subKey: '2', level: 3 },
+            { key: 'Life and Death', subKey: '3', level: 4 },
+            { key: 'Life and Death', subKey: '4', level: 5 }
+        ],
+        bSkills: [
+            { key: 'Atk/Def Ruse', subKey: '1', level: 3 },
+            { key: 'Atk/Def Ruse', subKey: '2', level: 4 },
+            { key: 'Atk/Def Ruse', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Atk Smoke', subKey: '1', level: 1 },
+            { key: 'Atk Smoke', subKey: '2', level: 2 },
+            { key: 'Atk Smoke', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Heath: Wandering Knight',
+        wps: [
+            { key: 'Iron Lance', level: 1 },
+            { key: 'Steel Lance', level: 2 },
+            { key: 'Ridersbane', level: 3 },
+            { key: 'Ridersbane+', level: 5 }
+        ],
+        specials: [
+            { key: 'Dragon Gaze', level: 3 },
+            { key: 'Dragon Fang', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Atk/Def Push', subKey: '1', level: 1 },
+            { key: 'Atk/Def Push', subKey: '2', level: 2 },
+            { key: 'Atk/Def Push', subKey: '3', level: 4 }
+        ],
+        bSkills: [
+            { key: 'Escape Route', subKey: '1', level: 3 },
+            { key: 'Escape Route', subKey: '2', level: 4 },
+            { key: 'Escape Route', subKey: '3', level: 5 }
+        ]
+    },
+    {
+        key: 'Fiora: Airborne Warrior',
+        wps: [
+            { key: 'Iron Lance', level: 1 },
+            { key: 'Steel Lance', level: 2 },
+            { key: 'Guard Lance', level: 3 },
+            { key: 'Guard Lance+', level: 5 }
+        ],
+        specials: [
+            { key: 'Chilling Wind', level: 3 },
+            { key: 'Iceberg', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Fury', subKey: '1', level: 1 },
+            { key: 'Fury', subKey: '2', level: 2 },
+            { key: 'Fury', subKey: '3', level: 4 }
+        ],
+        bSkills: [
+            { key: 'Pegasus Flight', subKey: '1', level: 3 },
+            { key: 'Pegasus Flight', subKey: '2', level: 4 },
+            { key: 'Pegasus Flight', subKey: '3', level: 5 }
+        ]
+    },
+    {
+        key: 'Chrom: Crowned Exalt',
+        wps: [
+            { key: 'Iron Bow', level: 1 },
+            { key: 'Steel Bow', level: 2 },
+            { key: 'Silver Bow', level: 3 },
+            { key: 'Randgríðr', level: 5 }
+        ],
+        assists: [
+            { key: 'Reposition', level: 3 },
+            { key: 'To Change Fate!', level: 4 }
+        ],
+        aSkills: [{ key: 'Close Counter', level: 5 }],
+        bSkills: [
+            { key: 'Lull Atk/Def', subKey: '1', level: 3 },
+            { key: 'Lull Atk/Def', subKey: '2', level: 4 },
+            { key: 'Lull Atk/Def', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Rouse Def/Res', subKey: '1', level: 1 },
+            { key: 'Rouse Def/Res', subKey: '2', level: 2 },
+            { key: 'Rouse Def/Res', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Lysithea: Child Prodigy',
+        wps: [
+            { key: 'Flux', level: 1 },
+            { key: 'Ruin', level: 2 },
+            { key: 'Fenrir', level: 3 },
+            { key: 'Hades Ω', level: 5 }
+        ],
+        specials: [
+            { key: 'New Moon', level: 3 },
+            { key: 'Moonbow', level: 4 }
+        ],
+        aSkills: [
+            { key: 'Death Blow', subKey: '1', level: 2 },
+            { key: 'Death Blow', subKey: '2', level: 3 },
+            { key: 'Death Blow', subKey: '3', level: 4 },
+            { key: 'Death Blow', subKey: '4', level: 5 }
+        ],
+        bSkills: [
+            { key: 'Lull Spd/Res', subKey: '1', level: 3 },
+            { key: 'Lull Spd/Res', subKey: '2', level: 4 },
+            { key: 'Lull Spd/Res', subKey: '3', level: 5 }
+        ],
+        cSkills: [
+            { key: 'Time`s Pulse', subKey: '1', level: 1 },
+            { key: 'Time`s Pulse', subKey: '2', level: 2 },
+            { key: 'Time`s Pulse', subKey: '3', level: 4 }
+        ]
+    },
+    {
+        key: 'Ferdinand: Noblest of Nobles',
+        wps: [
+            { key: 'Iron Lance', level: 1 },
+            { key: 'Steel Lance', level: 2 },
+            { key: 'Vanguard', level: 3 },
+            { key: 'Vanguard+', level: 5 }
+        ],
+        assists: [{ key: 'Reposition', level: 3 }],
+        aSkills: [
+            { key: 'Fortress Def', subKey: '1', level: 1 },
+            { key: 'Fortress Def', subKey: '2', level: 2 },
+            { key: 'Fortress Def', subKey: '3', level: 4 }
+        ],
+        cSkills: [
+            { key: 'Rouse Spd/Def', subKey: '1', level: 3 },
+            { key: 'Rouse Spd/Def', subKey: '2', level: 4 },
+            { key: 'Rouse Spd/Def', subKey: '3', level: 5 }
+        ]
+    },
+    { key: 'Bernadetta: Eternal Loner', wps: [{ key: 'Hammer', level: 1 }] },
+    { key: 'Annette: Overachiever', wps: [{ key: 'Hammer', level: 1 }] },
+    { key: 'Flame Emperor: Bringer of War', wps: [{ key: 'Hammer', level: 1 }] }
 ];

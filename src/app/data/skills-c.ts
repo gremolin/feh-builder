@@ -517,6 +517,31 @@ export const fehCSkills: Skill[] = [
         restrictions: [none]
     },
     {
+        name: 'Spd Tactic',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'At start of turn, grants Spd+2 to allies within 2 spaces for 1 turn. Granted only if number of that ally`s movement type on current team ≤ 2.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At start of turn, grants Spd+4 to allies within 2 spaces for 1 turn. Granted only if number of that ally`s movement type on current team ≤ 2. ',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'At start of turn, grants Spd+6 to allies within 2 spaces for 1 turn. Granted only if number of that ally`s movement type on current team ≤ 2. ',
+                sp: 240
+            }
+        ],
+        restrictions: [none]
+    },
+    {
         name: 'Savage Blow',
         description: '',
         skillLevels: [
@@ -608,6 +633,28 @@ export const fehCSkills: Skill[] = [
         restrictions: [staff]
     },
     {
+        name: 'Res Smoke',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'Inflicts Res-3 on foes within 2 spaces of target through their next actions after combat.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description: 'Inflicts Res-5 on foes within 2 spaces of target through their next actions after combat.',
+                sp: 120
+            },
+            {
+                value: '3',
+                description: 'Inflicts Res-7 on foes within 2 spaces of target through their next actions after combat.',
+                sp: 240
+            }
+        ],
+        restrictions: [staff]
+    },
+    {
         name: 'Spur Atk',
         description: '',
         skillLevels: [
@@ -630,7 +677,7 @@ export const fehCSkills: Skill[] = [
         restrictions: [none]
     },
     {
-        name: 'Spur Atk / Res',
+        name: 'Spur Atk/Res',
         description: '',
         skillLevels: [
             {
@@ -669,7 +716,7 @@ export const fehCSkills: Skill[] = [
         restrictions: [none]
     },
     {
-        name: 'Spur Def / Res',
+        name: 'Spur Def/Res',
         description: '',
         skillLevels: [
             {
@@ -885,7 +932,51 @@ export const fehCSkills: Skill[] = [
                 sp: 240
             }
         ],
-        restrictions: [none]
+        restrictions: [armor, flying]
+    },
+    {
+        name: 'Rouse Spd/Def',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'At start of turn, if unit is not adjacent to an ally, grants Spd/Def+2 to unit for 1 turn.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description: 'At start of turn, if unit is not adjacent to an ally, grants Spd/Def+4 to unit for 1 turn. ',
+                sp: 120
+            },
+            {
+                value: '3',
+                description: 'At start of turn, if unit is not adjacent to an ally, grants Spd/Def+6 to unit for 1 turn. ',
+                sp: 240
+            }
+        ],
+        restrictions: [armor, flying]
+    },
+    {
+        name: 'Rouse Def/Res',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'At start of turn, if unit is not adjacent to an ally, grants Def/Res+2 to unit for 1 turn.',
+                sp: 60
+            },
+            {
+                value: '2',
+                description: 'At start of turn, if unit is not adjacent to an ally, grants Def/Res+4 to unit for 1 turn. ',
+                sp: 120
+            },
+            {
+                value: '3',
+                description: 'At start of turn, if unit is not adjacent to an ally, grants Def/Res+6 to unit for 1 turn. ',
+                sp: 240
+            }
+        ],
+        restrictions: [armor, flying]
     },
     {
         name: 'Odd Atk Wave',
@@ -913,6 +1004,31 @@ export const fehCSkills: Skill[] = [
         restrictions: [none]
     },
     {
+        name: 'Even Atk Wave',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'At start of even-numbered turns, grants Atk+2 to unit and adjacent allies for 1 turn.\n(Bonus granted to unit even if no allies are adjacent.)',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At start of even-numbered turns, grants Atk+4 to unit and adjacent allies for 1 turn.\n(Bonus granted to unit even if no allies are adjacent.)',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'At start of even-numbered turns, grants Atk+6 to unit and adjacent allies for 1 turn.\n(Bonus granted to unit even if no allies are adjacent.)',
+                sp: 240
+            }
+        ],
+        restrictions: [none]
+    },
+    {
         name: 'Odd Res Wave',
         description: '',
         skillLevels: [
@@ -932,6 +1048,31 @@ export const fehCSkills: Skill[] = [
                 value: '3',
                 description:
                     'At start of odd-numbered turns, grants Res+6 to unit and adjacent allies for 1 turn.\n(Bonus granted to unit even if no allies are adjacent.)',
+                sp: 240
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Odd Spd Wave',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'At start of odd-numbered turns, grants Spd+2 to unit and adjacent allies for 1 turn.\n(Bonus granted to unit even if no allies are adjacent.)',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At start of odd-numbered turns, grants Spd+4 to unit and adjacent allies for 1 turn.\n(Bonus granted to unit even if no allies are adjacent.)',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'At start of odd-numbered turns, grants Spd+6 to unit and adjacent allies for 1 turn.\n(Bonus granted to unit even if no allies are adjacent.)',
                 sp: 240
             }
         ],
@@ -1030,7 +1171,13 @@ export const fehCSkills: Skill[] = [
     },
     {
         name: 'Hone Fliers',
-        description: 'At start of turn, grants Atk/Spd+6 to adjacent flying allies for 1 turn. ',
+        description: 'At start of turn, grants Atk/Spd+6 to adjacent flying allies for 1 turn.',
+        required: [flying],
+        sp: 200
+    },
+    {
+        name: 'Fortify Fliers',
+        description: 'At start of turn, grants Def/Res+6 to adjacent flying allies for 1 turn.',
         required: [flying],
         sp: 200
     },
@@ -1039,5 +1186,97 @@ export const fehCSkills: Skill[] = [
         description: 'Grants Def/Res+4 to cavalry allies within 2 spaces during combat.',
         required: [cavalry],
         sp: 200
+    },
+    {
+        name: 'Goad Fliers',
+        description: 'Grants Atk/Spd+4 to flying allies within 2 spaces during combat.',
+        required: [flying],
+        sp: 200
+    },
+    {
+        name: 'Ward Fliers',
+        description: 'Grants Def/Res+4 to flying allies within 2 spaces during combat.',
+        required: [flying],
+        sp: 200
+    },
+    {
+        name: 'Goad Cavalry',
+        description: 'Grants Atk/Spd+4 to cavalry allies within 2 spaces during combat.',
+        required: [cavalry],
+        sp: 200
+    },
+    {
+        name: 'Close Guard',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    ' Allies within 2 spaces gain: "If foe uses sword, lance, axe, dragonstone, or beast damage, grants Def/Res+2 during combat."',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'Allies within 2 spaces gain: "If foe uses sword, lance, axe, dragonstone, or beast damage, grants Def/Res+3 during combat."',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'Allies within 2 spaces gain: "If foe uses sword, lance, axe, dragonstone, or beast damage, grants Def/Res+4 during combat."',
+                sp: 240
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Infantry Pulse',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    ' At the start of turn 1, grants Special cooldown count-1 to all infantry allies on team with HP ≤ unit`s HP-5. (Stacks with similar skills.)',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At the start of turn 1, grants Special cooldown count-1 to all infantry allies on team with HP ≤ unit`s HP-3. (Stacks with similar skills.)',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'At the start of turn 1, grants Special cooldown count-1 to all infantry allies on team with HP < unit`s HP. (Stacks with similar skills.) ',
+                sp: 240
+            }
+        ],
+        required: [infantry]
+    },
+    {
+        name: 'Time`s Pulse',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'At the start of every third turn, if Special cooldown count is at its maximum value, grants Special cooldown count-1. ',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At the start of every second turn, if Special cooldown count is at its maximum value, grants Special cooldown count-1.',
+                sp: 120
+            },
+            {
+                value: '3',
+                description: 'At start of turn, if Special cooldown count is at its maximum value, grants Special cooldown count-1.',
+                sp: 240
+            }
+        ],
+        required: [infantry]
     }
 ];

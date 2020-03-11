@@ -717,5 +717,17 @@ export const fehUnits: Unit[] = [
     { name: 'Silque: Selfless Cleric', released: new Date(2020, 1, 6), move: cavalry, wpType: staff, range: distant, colour: colourless },
     { name: 'Rudolf: Emperor of Rigel', released: new Date(2020, 1, 6), move: armor, wpType: lance, range: closeRange, colour: blue },
     { name: 'Faye: Drawn Heartstring', released: new Date(2020, 1, 6), move: armor, wpType: bow, range: closeRange, colour: colourless },
-    { name: 'Conrad: Unmasked Knight', released: new Date(2020, 1, 6), move: cavalry, wpType: sword, range: closeRange, colour: red }
+    { name: 'Conrad: Unmasked Knight', released: new Date(2020, 1, 6), move: cavalry, wpType: sword, range: closeRange, colour: red },
+    { name: 'Rath: Wolf of Sacae', released: new Date(2020, 1, 17), move: cavalry, wpType: bow, range: distant, colour: green },
+    { name: 'Nils: Bright Bard', released: new Date(2020, 1, 17), move: infantry, wpType: breath, range: closeRange, colour: blue },
+    { name: 'Leila: Rose amid Fangs', released: new Date(2020, 1, 17), move: infantry, wpType: dagger, range: distant, colour: colourless },
+    { name: 'Heath: Wandering Knight', released: new Date(2020, 1, 17), move: flying, wpType: lance, range: closeRange, colour: blue },
+    { name: 'Fiora: Airborne Warrior', released: new Date(2020, 1, 17), move: flying, wpType: lance, range: closeRange, colour: blue },
+    { name: 'Chrom: Crowned Exalt', released: new Date(2020, 1, 27), move: infantry, wpType: bow, range: distant, colour: blue },
+    { name: 'Lysithea: Child Prodigy', released: new Date(2020, 2, 6), move: infantry, wpType: redTome, range: distant, colour: red },
+    { name: 'Ferdinand: Noblest of Nobles', released: new Date(2020, 2, 6), move: cavalry, wpType: lance, range: closeRange, colour: blue },
+    //
+    { name: 'Bernadetta: Eternal Loner', released: new Date(2020, 2, 6), move: cavalry, wpType: sword, range: closeRange, colour: red },
+    { name: 'Annette: Overachiever', released: new Date(2020, 2, 6), move: cavalry, wpType: sword, range: closeRange, colour: red },
+    { name: 'Flame Emperor: Bringer of War', released: new Date(2020, 2, 9), move: cavalry, wpType: sword, range: closeRange, colour: red }
 ];

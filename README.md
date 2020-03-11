@@ -5,6 +5,9 @@
 unit rarity select,
 sp number should change if its not a native skill
 sp total,
+resplendant
+
+eliwood / roy wp inheritance
 
 ## Bugs
 

@@ -779,6 +779,28 @@ export const fehSeals: Skill[] = [
         restrictions: [none]
     },
     {
+        name: 'Defiant Spd',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description: 'At start of turn, if unit`s HP ≤ 50%, grants Spd+3 for 1 turn.',
+                sp: 40
+            },
+            {
+                value: '2',
+                description: 'At start of turn, if unit`s HP ≤ 50%, grants Spd+5 for 1 turn.',
+                sp: 80
+            },
+            {
+                value: '3',
+                description: 'At start of turn, if unit`s HP ≤ 50%, grants Spd+7 for 1 turn.',
+                sp: 160
+            }
+        ],
+        restrictions: [none]
+    },
+    {
         name: 'Deflect Magic',
         description: '',
         skillLevels: [
@@ -1034,6 +1056,31 @@ export const fehSeals: Skill[] = [
                 value: '3',
                 description:
                     'At start of even-numbered turns, grants Def+6 to unit and adjacent allies for 1 turn. (Bonus granted to unit even if no allies are adjacent.) ',
+                sp: 240
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Even Atk Wave',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    'At start of even-numbered turns, grants Atk+2 to unit and adjacent allies for 1 turn. (Bonus granted to unit even if no allies are adjacent.) ',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'At start of even-numbered turns, grants Atk+4 to unit and adjacent allies for 1 turn. (Bonus granted to unit even if no allies are adjacent.) ',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'At start of even-numbered turns, grants Atk+6 to unit and adjacent allies for 1 turn. (Bonus granted to unit even if no allies are adjacent.) ',
                 sp: 240
             }
         ],
@@ -2224,7 +2271,7 @@ export const fehSeals: Skill[] = [
             },
             {
                 value: '2',
-                description: 'If unit initiates combat, grants Atk/Spd+2 during combat.',
+                description: 'If unit initiates combat, grants Atk/Spd+4 during combat.',
                 sp: 240
             }
         ],
@@ -2441,6 +2488,31 @@ export const fehSeals: Skill[] = [
                 value: '3',
                 description: 'At start of combat, if unit`s HP ≥ foe`s HP+3, grants Spd+6 during combat.',
                 sp: 200
+            }
+        ],
+        restrictions: [none]
+    },
+    {
+        name: 'Close Guard',
+        description: '',
+        skillLevels: [
+            {
+                value: '1',
+                description:
+                    ' Allies within 2 spaces gain: "If foe uses sword, lance, axe, dragonstone, or beast damage, grants Def/Res+2 during combat."',
+                sp: 60
+            },
+            {
+                value: '2',
+                description:
+                    'Allies within 2 spaces gain: "If foe uses sword, lance, axe, dragonstone, or beast damage, grants Def/Res+3 during combat."',
+                sp: 120
+            },
+            {
+                value: '3',
+                description:
+                    'Allies within 2 spaces gain: "If foe uses sword, lance, axe, dragonstone, or beast damage, grants Def/Res+4 during combat."',
+                sp: 240
             }
         ],
         restrictions: [none]
